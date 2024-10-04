@@ -1,11 +1,11 @@
 import './App.css'
-import SignUp from './Components/User/signup'
+import Welcome from './Components/Welcome'
 
 function App() {
 
   return (
     <>
-      <SignUp /> 
+      <Welcome /> 
     </>
   )
 }
