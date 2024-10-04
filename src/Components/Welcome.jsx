@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react";
 
 const Welcome = () => {
   return (
     <div>
-      Welcome Page
+      <div className="w-full h-dvh bg-zinc-100">
+        <div className="h-11/12 h-2/3 bg-white">
+          <h1>Welcome Page</h1>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Welcome
+export default Welcome;
