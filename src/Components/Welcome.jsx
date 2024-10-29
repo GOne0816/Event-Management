@@ -1,11 +1,11 @@
-import React from "react";
-import { RiSearchLine } from "react-icons/ri";
-import { FaRegCalendar } from "react-icons/fa";
-import { MdOutlinePeopleAlt } from "react-icons/md";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { MdOutlineSignalCellularAlt } from "react-icons/md";
+import React, { useState } from "react";
+import { RiSearchLine, RiMenu3Line, RiCloseLine } from "react-icons/ri";
+import { FaRegCalendar, FaMapMarkerAlt } from "react-icons/fa";
+import { MdOutlinePeopleAlt, MdOutlineSignalCellularAlt } from "react-icons/md";
 
 const Welcome = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   const featuresList = [
     {
       id: 1,
