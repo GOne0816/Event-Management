@@ -1,33 +1,24 @@
-import './App.css'
-import NavBar from './Components/NavBar'
-import Welcome from './Components/Welcome'
-import Login from './Components/User/login'
-import Signup from './Components/User/signup'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import './App.css';
+import NavBar from './Components/NavBar';
+import Welcome from './Components/Welcome';
+import EventForYou from './Components/User/EventForYou';
+import Signup from './Components/User/Signup';
+import CreateEvent from './Components/User/CreateEvent';
 
-function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <><NavBar /> <Welcome /></>,
-    },
-    {
-      path: "/login",
-      element: <><NavBar /> <Login /></>,
-    },
-    {
-      path: "/signup",
-      element: <><NavBar /> <Signup /></>,
-    },
-  ]);
+const App = () => {
   return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  )
-}
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route path="/createEvent" element={<CreateEvent />} />
+        <Route path="/eventForYou" element={<EventForYou />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
-export default App
+export default App;

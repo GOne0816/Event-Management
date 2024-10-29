@@ -42,25 +42,25 @@ const Welcome = () => {
       id: 1,
       title: "Event 1",
       date: "March 15-17, 2024",
-      location: "Indore, IN",
+      location: "Utttar Pradesh, IN",
     },
     {
       id: 2,
       title: "Event 2",
       date: "July 8-10, 2024",
-      location: "Delhi, IN",
+      location: "Assam, IN",
     },
     {
       id: 3,
       title: "Event 3",
       date: "September 22-24, 2024",
-      location: "Jabalpur, IN",
+      location: "Bihar, IN",
     },
     {
       id: 4,
       title: "Event 4",
       date: "December 24-25, 2024",
-      location: "Bhopal, IN",
+      location: "Singrauli, IN",
     },
   ];
   return (
