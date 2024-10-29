@@ -10,17 +10,17 @@ const NavBar = () => {
   return (
     <div>
       <nav className="w-full p-4 px-80 bg-white shadow-md flex justify-between items-center max-sm:px-8">
-        <Link to="/" className="text-3xl font-extrabold max-sm:text-lg">
+        <Link to={'/'} className="text-3xl font-extrabold max-sm:text-lg">
           Festify
         </Link>
         <div className="hidden sm:ml-6 sm:flex sm:items-center gap-x-8 max-sm:gap-4">
-          <Link to="/createEvent" className="btn-Text p-2 rounded-md max-sm:text-sm">
+          <Link to={'/createEvent'} className="btn-Text p-2 rounded-md max-sm:text-sm">
             Create Event
           </Link>
-          <Link to="/eventForYou" className="btn-Text p-2 rounded-md max-sm:text-sm">
+          <Link to={'/eventForYou'} className="btn-Text p-2 rounded-md max-sm:text-sm">
             Events for You
           </Link>
-          <Link to="/signup" className="btn-Outlined ring-zinc-400 p-2 rounded-md">
+          <Link to={'/signup'} className="btn-Outlined ring-zinc-400 p-2 rounded-md">
             SignUp
           </Link>
         </div>

@@ -4,12 +4,12 @@ import './App.css';
 import NavBar from './Components/NavBar';
 import Welcome from './Components/Welcome';
 import EventForYou from './Components/User/EventForYou';
-import Signup from './Components/User/Signup';
+import Signup from './Components/User/signup';
 import CreateEvent from './Components/User/CreateEvent';
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <div>
       <NavBar />
       <Routes>
         <Route path="/" element={<Welcome />} />
@@ -17,7 +17,7 @@ const App = () => {
         <Route path="/eventForYou" element={<EventForYou />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>
-    </BrowserRouter>
+      </div>
   );
 };
 
