@@ -68,7 +68,7 @@ const Welcome = () => {
               key={feature.id}
               className="bg-zinc-100 ring-1 ring-zinc-400 rounded-lg p-6 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
             >
-              <div className="text-center mb-4">{feature.icon}</div>
+              <div className="flex justify-center mb-4">{feature.icon}</div>
               <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
               <p className="text-zinc-500">{feature.details}</p>
             </div>
