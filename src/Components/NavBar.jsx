@@ -9,7 +9,7 @@ const NavBar = () => {
 
   return (
     <div>
-      <nav className="w-full p-4 bg-white  shadow-md flex justify-between items-center px-6 lg:px-20">
+      <nav className="w-full p-4 bg-white  shadow-md flex justify-between items-center px-6 lg:px-16">
         {/* Logo */}
         <Link to="/" className="text-2xl lg:text-3xl font-extrabold">
           Festify
