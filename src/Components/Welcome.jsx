@@ -4,7 +4,7 @@ import { FaRegCalendar, FaMapMarkerAlt } from "react-icons/fa";
 import { MdOutlinePeopleAlt, MdOutlineSignalCellularAlt } from "react-icons/md";
 
 const Welcome = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
 
   const featuresList = [
     {
