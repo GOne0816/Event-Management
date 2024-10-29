@@ -43,7 +43,7 @@ const Welcome = () => {
       {/* Hero Section */}
       <div className="text-white bg-zinc-900 flex flex-col justify-center items-center min-h-[60vh] w-full transition-all duration-500 ease-in-out px-6 lg:px-48 lg:py-20">
         <h1 className="text-center p-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold">Manage Your Events with Ease</h1>
-        <p className="text-center px-2 sm:px-6 md:px-12 lg:px-96 pb-4 text-md sm:text-lg">
+        <p className="text-center px-2 sm:px-6 md:px-12 lg:mx-10 xl:mx-40 pb-4 text-md sm:text-lg">
           Streamline your event planning process with our powerful management tools. From small gatherings to large conferences, we've got you covered.
         </p>
         <p className="py-4 text-md sm:text-lg font-bold text-center">Discover the most happening events around you</p>
