@@ -67,22 +67,22 @@ const Welcome = () => {
     <div className="w-full h-dvh flex flex-col items-center">
       
       {/* Hero Section */}
-      <div className="text-white bg-zinc-900 flex flex-col justify-center items-center min-h-[60%] w-full max-sm: max-md:py-24 lg:py-32 xl:py-48">
-        <h1 className="flex justify-center p-4 text-6xl font-extrabold max-sm:text-3xl">
+      <div className="text-white bg-zinc-900 flex flex-col justify-center items-center min-h-[60%] w-full max-sm:min-h-[45%]">
+        <h1 className="flex justify-center text-center p-4 text-6xl font-extrabold max-sm:text-3xl">
           Manage Your Events with Ease
         </h1>
-        <p className="text-center px-96 pb-4 text-lg max-sm:text-sm max-sm:px-32">
+        <p className="text-center px-96 pb-4 text-lg max-sm:text-md max-sm:px-8">
           Streamline your event planning process with our powerful management
           tools. From small gatherings to large conferences, we've got you
           covered.
         </p>
-        <p className="py-4 text-lg font-bold max-sm:text-sm">Discover the Most happening events around you</p>
+        <p className="py-4 text-lg font-bold max-sm:text-md text-center">Discover the Most happening events around you</p>
         <div className="flex justify-center items-center bg-white px-4 rounded-lg ">
           <RiSearchLine className="size-6 text-black" />
           <input
             type="text"
             placeholder="Search Events, Categories, Location..."
-            className="px-4 min-w-96 py-2 outline-none text-black "
+            className="px-4 min-w-96 py-2 outline-none text-black max-sm:min-w-80"
           />
         </div>
       </div>
@@ -95,11 +95,11 @@ const Welcome = () => {
           </h2>
         </div>
         <div className="flex items-center justify-center">
-          <div className="grid grid-cols-2 px-96 max-sm:px-16 max-sm:gap-4 max-sm:grid-cols-1 gap-16 text-center">
+          <div className="grid grid-cols-2 px-96 max-sm:px-8 max-sm:gap-4 max-sm:grid-cols-1 gap-16 text-center">
             {featuresList.map((features) => (
               <div
                 key={features.id}
-                className="bg-zinc-100 ring-1 ring-zinc-400 rounded-lg min-w-96 min-h-32 p-6"
+                className="bg-zinc-100 ring-1 ring-zinc-400 rounded-lg min-w-96 min-h-32 max-sm:min-w-80 p-6"
               >
                 <h1 className="text-xl font-bold mb-2 flex items-center justify-center">
                   {features.icon}
@@ -120,9 +120,9 @@ const Welcome = () => {
           </h2>
         </div>
         <div className="flex items-center justify-center">
-          <div className="grid grid-cols-3 px-32 gap-8 max-sm:px-16 max-sm:gap-4 max-sm:grid-cols-2">
+          <div className="grid grid-cols-3 px-32 gap-8 max-sm:px-8 max-sm:gap-4 max-sm:grid-cols-1">
             {eventCards.map((events) => (
-              <div key={events.id} className="bg-white ring-1 ring-zinc-400 rounded-lg min-w-96 min-h-32 p-6 max-sm:min-w-48">
+              <div key={events.id} className="bg-white ring-1 ring-zinc-400 rounded-lg min-w-96 min-h-32 p-6 max-sm:min-w-80">
                 <h3 className="text-xl font-bold mb-2">{events.title}</h3>
                 <p className="text-zinc-500 mb-1">{events.date}</p>
                 <p className="text-zinc-500">{events.location}</p>
