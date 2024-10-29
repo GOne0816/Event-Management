@@ -67,7 +67,7 @@ const Welcome = () => {
     <div className="w-full h-dvh flex flex-col items-center">
       
       {/* Hero Section */}
-      <div className="text-white bg-zinc-900 flex flex-col justify-center items-center min-h-[60%] w-full max-sm:min-h-[45%]">
+      <div className="text-white bg-zinc-900 flex flex-col justify-center items-center min-h-[60%] w-full max-sm:min-h-[50%]">
         <h1 className="flex justify-center text-center p-4 text-6xl font-extrabold max-sm:text-3xl">
           Manage Your Events with Ease
         </h1>
