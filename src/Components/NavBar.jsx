@@ -9,24 +9,29 @@ const NavBar = () => {
 
   return (
     <div>
-      <nav className="w-full p-4 px-80 bg-white shadow-md flex justify-between items-center max-sm:px-8">
-        <Link to={'/'} className="text-3xl font-extrabold max-sm:text-lg">
+      <nav className="w-full p-4 bg-white shadow-md flex justify-between items-center px-6 lg:px-20 xl:px-80">
+        {/* Logo */}
+        <Link to="/" className="text-2xl lg:text-3xl font-extrabold">
           Festify
         </Link>
-        <div className="hidden sm:ml-6 sm:flex sm:items-center gap-x-8 max-sm:gap-4">
-          <Link to={'/createEvent'} className="btn-Text p-2 rounded-md max-sm:text-sm">
+
+        {/* Desktop Menu Links */}
+        <div className="hidden md:flex md:items-center gap-x-8">
+          <Link to="/createEvent" className="btn-Text p-2 rounded-md text-base lg:text-lg">
             Create Event
           </Link>
-          <Link to={'/eventForYou'} className="btn-Text p-2 rounded-md max-sm:text-sm">
+          <Link to="/eventForYou" className="btn-Text p-2 rounded-md text-base lg:text-lg">
             Events for You
           </Link>
-          <Link to={'/signup'} className="btn-Outlined ring-zinc-400 p-2 rounded-md">
-            SignUp
+          <Link to="/signup" className="btn-Outlined ring-zinc-400 p-2 rounded-md text-base lg:text-lg">
+            Sign Up
           </Link>
         </div>
-        <div className="flex items-center sm:hidden">
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
           <button
-            className="hover:cursor-pointer"
+            className="hover:cursor-pointer focus:outline-none"
             onClick={toggleMenu}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
@@ -35,23 +40,23 @@ const NavBar = () => {
           </button>
         </div>
       </nav>
-      
-      {/* Mobile menu */}
+
+      {/* Mobile Menu */}
       {isMenuOpen && (
-        <div id="mobile-menu" className="sm:hidden">
-          <div className="pt-2 pb-3 space-y-1">
+        <div id="mobile-menu" className="md:hidden bg-white shadow-lg p-4">
+          <div className="space-y-4">
             <Link to="/createEvent" onClick={toggleMenu}>
-              <button className="btn-Text px-8 w-full flex justify-start">
+              <button className="btn-Text w-full text-left p-2 rounded-md">
                 Create Event
               </button>
             </Link>
             <Link to="/eventForYou" onClick={toggleMenu}>
-              <button className="btn-Text px-8 w-full flex justify-start">
+              <button className="btn-Text w-full text-left p-2 rounded-md">
                 Events for You
               </button>
             </Link>
             <Link to="/signup" onClick={toggleMenu}>
-              <button className="btn-Text px-8 w-full flex justify-start">
+              <button className="btn-Outlined w-full text-left ring-zinc-400 p-2 rounded-md">
                 Sign Up
               </button>
             </Link>
