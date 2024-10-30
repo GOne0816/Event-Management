@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Info from "./info";
 import { IoIosMail, IoIosCall } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
@@ -142,8 +141,6 @@ const Contact = () => {
           </form>
         </div>
       </div>
-
-      <Info />
     </div>
   );
 };
