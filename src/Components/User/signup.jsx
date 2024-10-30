@@ -2,7 +2,7 @@ import React from "react";
 
 const signup = () => {
   return (
-    <div className="w-full h-dvh flex justify-center items-center -z-10  absolute top-0 left-0">
+    <div className="w-full h-dvh flex justify-center items-center">
       <div className="max-w-md w-11/12 h-[580px] bg-gray-100 rounded-xl p-12">
         <form>
           <h1 className="text-3xl font-extrabold tracking-tighter">
