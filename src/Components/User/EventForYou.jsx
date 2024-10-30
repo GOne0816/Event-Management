@@ -2,8 +2,8 @@ import React from 'react'
 
 const EventForYou = () => {
   return (
-    <div>
-      EventsforYou
+    <div className='h-[100%]'>
+      <h1>EventsforYou</h1>
     </div>
   )
 }
