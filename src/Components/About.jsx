@@ -111,7 +111,7 @@ const About = () => {
                   alt={founder.name}
                   className="rounded-2xl w-40 h-40 md:w-48 md:h-48 mb-4 lg:w-44 lg:h-44 lg:mt-16 md:mb-0 md:mr-8"
                 />
-                <div>
+                <div className="flex justify-center flex-col text-center">
                   <h1 className="text-2xl font-bold tracking-tighter ">{founder.name}</h1>
                   <h3 className="text-zinc-400">{founder.post}</h3>
                   <p className="text-zinc-600 py-4">{founder.description}</p>
@@ -121,7 +121,7 @@ const About = () => {
 
           </div>
           <div className="flex justify-center">
-         <div className="w-1/2 flex justify-center items-center">
+         <div className="lg:w-1/2 flex justify-center items-center">
             {Director.map((Director) => (
               <div key={Director.name} className="shadow-xl rounded-2xl p-8 flex flex-col justify-center md:flex-row items-center md:items-start ring-2 ring-zinc-200">
                 <img
@@ -129,7 +129,7 @@ const About = () => {
                   alt={Director.name}
                   className="rounded-2xl w-40 h-40 md:w-48 md:h-48 mb-4 lg:w-44 lg:h-44 lg:mt-20 md:mb-0 md:mr-8"
                 />
-                <div>
+                <div className="flex flex-col text-center justify-center">
                   <h1 className="text-2xl font-bold tracking-tighter ">{Director.name}</h1>
                   <h3 className="text-zinc-400">{Director.post}</h3>
                   <p className="text-zinc-600 py-4">{Director.description}</p>
