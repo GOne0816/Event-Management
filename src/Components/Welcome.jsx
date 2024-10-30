@@ -154,12 +154,12 @@ const Welcome = () => {
         <h1 className="text-center p-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold">
           Manage Your Events with Ease
         </h1>
-        <p className="text-center px-2 sm:px-6 md:px-12 lg:mx-10 xl:mx-40 pb-4 text-md sm:text-lg">
+        <p className="text-center px-2 sm:px-6 md:px-12 lg:mx-10 xl:mx-40 pb-4 text-md sm:text-lg max-sm:text-xs">
           Streamline your event planning process with our powerful management
           tools. From small gatherings to large conferences, we've got you
           covered.
         </p>
-        <p className="py-4 text-md sm:text-lg font-bold text-center">
+        <p className="py-4 text-md sm:text-lg font-bold text-center max-sm:text-sm">
           Discover the most happening events around you
         </p>
         <div className="flex justify-center items-center bg-white px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 w-full max-w-md">
@@ -222,7 +222,7 @@ const Welcome = () => {
             What Our Clients Say
           </h2>
         </div>
-        <div className="flex gap-8 px-36 py-32">
+        <div className="flex gap-8 px-36 py-32 max-sm:flex-col max-sm:px-8 max-sm:py-16">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
@@ -302,64 +302,6 @@ const Welcome = () => {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      {/* <footer className="space-y-4 w-full py-6 bg-zinc-900 text-white">
-        <h1 className="px-4 md:px-6 text-2xl lg:text-3xl font-extrabold">
-          Finesty
-        </h1>
-        <div className="flex justify-between px-4 md:px-6 text-start">
-          <div className="text-start flex max-sm:flex-col-reverse">
-            <p>&copy; 2024 Finesty. All rights reserved.</p>
-            <div className="flex max-sm:flex-col max-sm:gap-2 gap-8 px-6 max-sm:px-0 max-sm:pb-4">
-              <Link className="hover:underline" to="/About">
-                About
-              </Link>
-              <Link className="hover:underline" to="/Careers">
-                Careers
-              </Link>
-              <Link className="hover:underline" to="/Support">
-                Support
-              </Link>
-              <Link className="hover:underline" to="/Terms of Service">
-                Terms of Service
-              </Link>
-              <Link className="hover:underline" to="/Privacy">
-                Privacy
-              </Link>
-              <Link className="hover:underline" to="/Contact Us">
-                Contact Us
-              </Link>
-            </div>
-          </div>
-          <div className="flex gap-4 max-sm:items-end">
-            <a
-              href="https://www.instagram.com/5_g.one_5/"
-              aria-label="Link for my Instagram ID"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram className="size-5" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/jag-jeevan-ricky-8099ab246/"
-              aria-label="Link for my linkedin ID"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin className="size-5" />
-            </a>
-            <a
-              href="https://github.com/GOne0816"
-              aria-label="Link for my github ID"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub className="size-5" />
-            </a>
-          </div>
-        </div>
-      </footer> */}
     </div>
   );
 };

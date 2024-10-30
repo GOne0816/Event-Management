@@ -21,8 +21,8 @@ const About = () => {
   ];
   return (
     <div className="h-[100%]">
-      <section id="top" className="px-96 py-16 space-y-8">
-        <h1 className="text-6xl font-extrabold tracking-tighter">
+      <section id="top" className="px-96 py-16 space-y-8 max-sm:px-8">
+        <h1 className="text-6xl font-extrabold tracking-tighter max-sm:text-4xl">
           We reimagine how you discover events
         </h1>
         <p className="text-lg">
@@ -49,11 +49,11 @@ const About = () => {
 
         {/* How we make magic happen! */}
         <div className="pt-16">
-          <h1 className="text-6xl font-extrabold tracking-tighter">
+          <h1 className="text-6xl font-extrabold tracking-tighter max-sm:text-4xl">
             How we make magic happen!
           </h1>
-          <div className="flex gap-8 py-16">
-            <div className="bg-zinc-200 ring-2 ring-zinc-400 rounded-md w-1/2 p-4 flex justify-between flex-col">
+          <div className="flex gap-8 py-16 max-sm:flex-col">
+            <div className="bg-zinc-200 ring-2 ring-zinc-400 rounded-md w-1/2 max-sm:w-full p-4 flex justify-between flex-col">
               <div className="space-y-4">
                 <h1 className="text-xl font-bold text-center">
                   Event Discovery
@@ -69,7 +69,7 @@ const About = () => {
               </div>
               <button className="btn-Text">Discover Events</button>
             </div>
-            <div className="bg-zinc-200 ring-2 ring-zinc-400 rounded-md w-1/2 p-4 flex justify-between flex-col">
+            <div className="bg-zinc-200 ring-2 ring-zinc-400 rounded-md w-1/2 max-sm:w-full p-4 flex justify-between flex-col">
               <div className="space-y-4">
                 <h1 className="text-xl font-bold text-center">
                   Event Ticketing
@@ -90,12 +90,12 @@ const About = () => {
 
         {/* Meet the Founders */}
         <div className="py-16">
-          <h1 className="text-6xl font-extrabold tracking-tighter">
+          <h1 className="text-6xl font-extrabold tracking-tighter max-sm:text-4xl">
             Meet the Founders
           </h1>
           <div className="py-16 space-y-8">
             {founders.map((founder) => (
-              <div className="shadow-xl rounded-2xl py-16 px-4 flex ring-2 ring-zinc-200">
+              <div className="shadow-xl rounded-2xl py-16 px-4 flex max-sm:flex-col ring-2 ring-zinc-200">
                 <img
                   src={founder.image}
                   alt={founder.name}
