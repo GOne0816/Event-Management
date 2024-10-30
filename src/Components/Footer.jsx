@@ -9,7 +9,7 @@ const Footer = () => {
     <div>
       <footer className="space-y-4 w-full py-6 bg-zinc-900 text-white">
         <h1 className="px-4 md:px-6 text-2xl lg:text-3xl font-extrabold">
-          Finesty
+          Festify
         </h1>
         <div className="flex justify-between px-4 md:px-6 text-start">
           <div className="text-start flex max-sm:flex-col-reverse">

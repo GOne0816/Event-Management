@@ -23,14 +23,14 @@ const About = () => {
 
   return (
     <div className="h-full">
-      <section className="px-8 md:px-24 py-16 space-y-8">
-        <h1 className="text-4xl font-extrabold tracking-tighter md:text-5xl">
+      <section className="px-8 md:px-24 py-16  space-y-8">
+        <h1 className="text-4xl font-extrabold flex justify-center tracking-tighter md:text-5xl">
           We reimagine how you discover events
         </h1>
-        <p className="text-lg">
+        <p className="text-lg flex justify-center font-bold text-right font-serif text-gray-800">
           Events are our pulse, the rhythm that drives us.
         </p>
-        <p>
+        <p className="flex justify-center">
           Founded in 2024, Festify is now one of the world’s largest Event
           Discovery Platforms. Our mission is to turn ordinary days into
           extraordinary memories. For you. For the memories you crave to create.
@@ -54,7 +54,7 @@ const About = () => {
 
         {/* How we make magic happen! */}
         <div className="pt-16">
-          <h1 className="text-4xl font-extrabold tracking-tighter md:text-5xl">
+          <h1 className="text-4xl flex justify-center font-extrabold tracking-tighter md:text-5xl">
             How we make magic happen!
           </h1>
           <div className="flex flex-col md:flex-row gap-8 py-16">
@@ -91,7 +91,7 @@ const About = () => {
 
         {/* Meet the Founders */}
         <div className="py-16">
-          <h1 className="text-4xl font-extrabold tracking-tighter md:text-5xl">
+          <h1 className="text-4xl font-extrabold flex justify-center tracking-tighter md:text-5xl">
             Meet the Founders
           </h1>
           <div className="flex flex-col md:flex-row gap-8 py-16">
