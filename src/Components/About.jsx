@@ -1,6 +1,7 @@
 import React from "react";
 import { RiArrowRightSFill } from "react-icons/ri";
 import JagJeevan from '../Components/Assets/GOne.png'
+import Tiwari from '../Components/Assets/Tiwari.jpg'
 
 const About = () => {
   const founders = [
@@ -12,6 +13,7 @@ const About = () => {
         "We believe people should go out, attend events, meet interesting people, and live a happening life. Wherever you are in the world, AllEvents helps you turn moments into lasting memories. It’s your personal guide to exploring the vibrant world of local events and experiences, where every day holds the promise of a new adventure.",
     },
     {
+      image: Tiwari,
       name: "Aditya Tiwari",
       post: "Co-Founder and CEO, Festify",
       description:
