@@ -1,12 +1,12 @@
 import React from "react";
 import { RiArrowRightSFill } from "react-icons/ri";
-import JagJeevan from '../Components/Assets/GOne.png'
-import Tiwari from '../Components/Assets/Tiwari.jpg'
+import JagJeevan from "../Components/Assets/GOne.png";
+import Tiwari from "../Components/Assets/Tiwari.jpg";
 
 const About = () => {
   const founders = [
     {
-      image: JagJeevan,  
+      image: JagJeevan,
       name: "Jag Jeevan",
       post: "Co-Founder and CEO, Festify",
       description:
@@ -20,10 +20,11 @@ const About = () => {
         "Festify is where innovation meets passion, and every line of code contributes to making the world’s largest event discovery platform come to life. We are passionate about developing a platform that makes it super simple to discover events for people, no matter where they are. We embody the spirit of #StayHappening and are working to impact others!",
     },
   ];
+
   return (
-    <div className="h-[100%]">
-      <section id="top" className="px-96 py-16 space-y-8 max-sm:px-8">
-        <h1 className="text-6xl font-extrabold tracking-tighter max-sm:text-4xl">
+    <div className="h-full">
+      <section className="px-8 md:px-24 py-16 space-y-8">
+        <h1 className="text-4xl font-extrabold tracking-tighter md:text-5xl">
           We reimagine how you discover events
         </h1>
         <p className="text-lg">
@@ -46,19 +47,20 @@ const About = () => {
           seamless ticketing and promotion that empowers organizers to bring
           their events to life and share them with the world.
         </p>
-        <button className="btn-Text flex justify-center items-center pl-2"><RiArrowRightSFill className="size-6"/>Read our story</button>
+        <button className="btn-Text flex items-center pl-2">
+          <RiArrowRightSFill className="text-lg" />
+          Read our story
+        </button>
 
         {/* How we make magic happen! */}
         <div className="pt-16">
-          <h1 className="text-6xl font-extrabold tracking-tighter max-sm:text-4xl">
+          <h1 className="text-4xl font-extrabold tracking-tighter md:text-5xl">
             How we make magic happen!
           </h1>
-          <div className="flex gap-8 py-16 max-sm:flex-col">
-            <div className="bg-zinc-200 ring-2 ring-zinc-400 rounded-md w-1/2 max-sm:w-full p-4 flex justify-between flex-col">
+          <div className="flex flex-col md:flex-row gap-8 py-16">
+            <div className="bg-zinc-200 ring-2 ring-zinc-400 rounded-md w-full p-4 flex flex-col justify-between">
               <div className="space-y-4">
-                <h1 className="text-xl font-bold text-center">
-                  Event Discovery
-                </h1>
+                <h1 className="text-xl font-bold text-center">Event Discovery</h1>
                 <p>
                   We make it easy for event explorers to discover events
                   happening around them!
@@ -70,11 +72,9 @@ const About = () => {
               </div>
               <button className="btn-Text">Discover Events</button>
             </div>
-            <div className="bg-zinc-200 ring-2 ring-zinc-400 rounded-md w-1/2 max-sm:w-full p-4 flex justify-between flex-col">
+            <div className="bg-zinc-200 ring-2 ring-zinc-400 rounded-md w-full p-4 flex flex-col justify-between">
               <div className="space-y-4">
-                <h1 className="text-xl font-bold text-center">
-                  Event Ticketing
-                </h1>
+                <h1 className="text-xl font-bold text-center">Event Ticketing</h1>
                 <p>
                   We provide a simple yet comprehensive event listing and
                   ticketing solution to event organizers!
@@ -91,19 +91,19 @@ const About = () => {
 
         {/* Meet the Founders */}
         <div className="py-16">
-          <h1 className="text-6xl font-extrabold tracking-tighter max-sm:text-4xl">
+          <h1 className="text-4xl font-extrabold tracking-tighter md:text-5xl">
             Meet the Founders
           </h1>
-          <div className="py-16 space-y-8">
+          <div className="flex flex-col md:flex-row gap-8 py-16">
             {founders.map((founder) => (
-              <div className="shadow-xl rounded-2xl py-16 px-4 flex max-sm:flex-col ring-2 ring-zinc-200">
+              <div key={founder.name} className="shadow-xl rounded-2xl p-8 flex flex-col md:flex-row items-center md:items-start ring-2 ring-zinc-200">
                 <img
                   src={founder.image}
                   alt={founder.name}
-                  className="rounded-2xl w-[100%] h-[100%]"
+                  className="rounded-2xl w-40 h-40 md:w-48 md:h-48 mb-4 lg:w-44 lg:h-44 lg:mt-16 md:mb-0 md:mr-8"
                 />
-                <div className="p-4">
-                  <h1 className="text-4xl font-bold tracking-tighter">{founder.name}</h1>
+                <div>
+                  <h1 className="text-2xl font-bold tracking-tighter ">{founder.name}</h1>
                   <h3 className="text-zinc-400">{founder.post}</h3>
                   <p className="text-zinc-600 py-4">{founder.description}</p>
                 </div>
