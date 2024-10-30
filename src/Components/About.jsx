@@ -25,7 +25,7 @@ const About = () => {
   const Director = [{
     image: Hybrid,
     name: "Hujaifa Ahmed",
-    post: "Director, Festify",
+    post: "Director and Manager, Festify",
     description:
     "The Director of an Event Management Organization oversees the planning and execution of events, ensuring creativity and precision in every detail. They lead a team of professionals, manage client relationships, and coordinate logistics, all while maintaining a focus on delivering exceptional experiences that exceed client expectations and create lasting memories."
   }]
