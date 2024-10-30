@@ -1,6 +1,6 @@
 import React from "react";
 import { RiArrowRightSFill } from "react-icons/ri";
-import JagJeevan from '../pages/Assets/GOne.png'
+import JagJeevan from '../Components/Assets/GOne.png'
 
 const About = () => {
   const founders = [

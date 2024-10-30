@@ -7,7 +7,7 @@ import Footer from './Components/Footer';
 import EventForYou from './Components/User/EventForYou';
 import Signup from './Components/User/signup';
 import CreateEvent from './Components/User/CreateEvent';
-import About from './Components/pages/About';
+import About from './Components/About';
 
 const App = () => {
   return (
