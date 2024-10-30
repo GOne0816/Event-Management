@@ -2,9 +2,17 @@ import React from "react";
 import { RiArrowRightSFill } from "react-icons/ri";
 import JagJeevan from "../Components/Assets/GOne.png";
 import Tiwari from "../Components/Assets/Tiwari.jpg";
+import Hybrid from "../Components/Assets/Hujaifa.jpg"
 
 const About = () => {
   const founders = [
+    {
+      image: Tiwari,
+      name: "Aditya Tiwari",
+      post: "Founder and CEO, Festify",
+      description:
+        "Festify is where innovation meets passion, and every line of code contributes to making the world’s largest event discovery platform come to life. We are passionate about developing a platform that makes it super simple to discover events for people, no matter where they are. We embody the spirit of #StayHappening and are working to impact others!",
+    },
     {
       image: JagJeevan,
       name: "Jag Jeevan",
@@ -12,14 +20,15 @@ const About = () => {
       description:
         "We believe people should go out, attend events, meet interesting people, and live a happening life. Wherever you are in the world, AllEvents helps you turn moments into lasting memories. It’s your personal guide to exploring the vibrant world of local events and experiences, where every day holds the promise of a new adventure.",
     },
-    {
-      image: Tiwari,
-      name: "Aditya Tiwari",
-      post: "Co-Founder and CEO, Festify",
-      description:
-        "Festify is where innovation meets passion, and every line of code contributes to making the world’s largest event discovery platform come to life. We are passionate about developing a platform that makes it super simple to discover events for people, no matter where they are. We embody the spirit of #StayHappening and are working to impact others!",
-    },
   ];
+
+  const Director = [{
+    image: Hybrid,
+    name: "Hujaifa Ahmed",
+    post: "Director, Festify",
+    description:
+    "The Director of an Event Management Organization oversees the planning and execution of events, ensuring creativity and precision in every detail. They lead a team of professionals, manage client relationships, and coordinate logistics, all while maintaining a focus on delivering exceptional experiences that exceed client expectations and create lasting memories."
+  }]
 
   return (
     <div className="h-full">
@@ -109,7 +118,27 @@ const About = () => {
                 </div>
               </div>
             ))}
+
           </div>
+          <div className="flex justify-center">
+         <div className="w-1/2 flex justify-center items-center">
+            {Director.map((Director) => (
+              <div key={Director.name} className="shadow-xl rounded-2xl p-8 flex flex-col justify-center md:flex-row items-center md:items-start ring-2 ring-zinc-200">
+                <img
+                  src={Director.image}
+                  alt={Director.name}
+                  className="rounded-2xl w-40 h-40 md:w-48 md:h-48 mb-4 lg:w-44 lg:h-44 lg:mt-20 md:mb-0 md:mr-8"
+                />
+                <div>
+                  <h1 className="text-2xl font-bold tracking-tighter ">{Director.name}</h1>
+                  <h3 className="text-zinc-400">{Director.post}</h3>
+                  <p className="text-zinc-600 py-4">{Director.description}</p>
+                </div>
+              </div>
+            ))}
+            </div>
+            </div>
+
         </div>
       </section>
     </div>
