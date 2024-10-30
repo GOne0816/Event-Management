@@ -9,6 +9,7 @@ import { FaStar } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa6";
+import Contact from "./User/Contact";
 
 const Welcome = () => {
   const featuresList = [
@@ -247,61 +248,9 @@ const Welcome = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="bg-zinc-100 w-full">
-        <div className="">
-          <div className=" flex justify-center items-center flex-col text-center py-24 ">
-            <h1 className="text-center font-bold text-5xl tracking-tighter max-sm:text-3xl max-sm:font-extrabold">
-              Get in Touch
-            </h1>
-            <p className="text-zinc-900 dark:text-zinc-500 text-xl max-sm:text-xs">
-              Have a project in mind? Let's chat.
-            </p>
-            <form
-              onSubmit={onSubmit}
-              className="w-1/4 flex flex-col gap-4 my-12 max-sm:w-3/4  max-lg:w-2/4"
-            >
-              <input
-                ref={nameInputRef}
-                type="text"
-                name="from_name"
-                id=""
-                placeholder="Name"
-                className="p-4 rounded-lg "
-                required
-              />
-              <input
-                ref={emailInputRef}
-                type="from_email"
-                name="Email"
-                id=""
-                placeholder="Email"
-                className="p-4 rounded-lg "
-                required
-              />
-              <input
-                ref={subjectRef}
-                type="text"
-                name="subject"
-                id=""
-                placeholder="Subject"
-                className="p-4 rounded-lg "
-                required
-              />
-              <textarea
-                ref={messageRef}
-                type="text"
-                name="Message"
-                rows={6}
-                placeholder="Message"
-                className="p-4 rounded-lg "
-                required
-              />
-              <button className="btn-Blue my-6">Submit</button>
-            </form>
-            <Toaster className="p-5" position="top-right" />
-          </div>
-        </div>
-      </section>
+
+      < Contact />
+    
     </div>
   );
 };
