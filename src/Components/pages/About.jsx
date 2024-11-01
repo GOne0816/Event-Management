@@ -1,8 +1,9 @@
 import React from "react";
 import { RiArrowRightSFill } from "react-icons/ri";
-import JagJeevan from "../Components/Assets/GOne.png";
-import Tiwari from "../Components/Assets/Tiwari.jpg";
-import Hybrid from "../Components/Assets/Hujaifa.jpg"
+import JagJeevan from "./Assets/GOne.png";
+import JagJeevan2 from "./Assets/GOne2.jpg";
+import Tiwari from "./Assets/Tiwari.jpg";
+import Hybrid from "./Assets/Hujaifa.jpg"
 
 const About = () => {
   const founders = [
@@ -14,7 +15,7 @@ const About = () => {
         " We believe people should go out, attend events, meet interesting people, and live a happening life. Wherever you are in the world, AllEvents helps you turn moments into lasting memories. It’s your personal guide to exploring the vibrant world of local events and experiences, where every day holds the promise of a new adventure.",
     },
     {
-      image: JagJeevan,
+      image: JagJeevan2,
       name: "Jag Jeevan",
       post: "Co-Founder and CEO, Festify",
       description:
@@ -36,10 +37,10 @@ const About = () => {
         <h1 className="text-4xl font-extrabold flex justify-center tracking-tighter md:text-5xl">
           We reimagine how you discover events
         </h1>
-        <p className="text-lg flex justify-center font-bold text-right font-serif text-gray-800">
+        <p className="text-lg flex justify-center font-bold text-right">
           Events are our pulse, the rhythm that drives us.
         </p>
-        <p className="flex justify-center">
+        <p className="flex text-lg justify-center">
           Founded in 2024, Festify is now one of the world’s largest Event
           Discovery Platforms. Our mission is to turn ordinary days into
           extraordinary memories. For you. For the memories you crave to create.

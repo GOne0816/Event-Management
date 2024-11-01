@@ -1,15 +1,11 @@
 import React, { useRef } from "react";
-import { Toaster, toast } from "sonner";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import { RiSearchLine } from "react-icons/ri";
 import { FaRegCalendar, FaMapMarkerAlt } from "react-icons/fa";
 import { MdOutlinePeopleAlt, MdOutlineSignalCellularAlt } from "react-icons/md";
 import { FaCircleCheck } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa6";
-import { FaInstagram } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa6";
-import { FaGithub } from "react-icons/fa6";
-import Contact from "./User/Contact";
+import Contact from "./pages/Contact";
 
 const Welcome = () => {
   const featuresList = [
@@ -148,6 +144,20 @@ const Welcome = () => {
     notify();
   };
 
+  const [selectedButtons, setSelectedButtons] = useState([]);
+
+  const handleButtonClick = (buttonId) => {
+    setSelectedButtons((prevSelected) => {
+      if (prevSelected.includes(buttonId)) {
+        // Button is already selected, deselect it
+        return prevSelected.filter((id) => id !== buttonId);
+      } else {
+        // Button is not selected, select it
+        return [...prevSelected, buttonId];
+      }
+    });
+  };
+
   return (
     <div className="w-full flex flex-col items-center">
       {/* Hero Section */}
@@ -172,6 +182,81 @@ const Welcome = () => {
           />
         </div>
       </div>
+
+      {/* What you love Section */}
+      <section className="w-full">
+        <div className="bg-zinc-100 px-80 max-sm:px-8 py-16">
+          <h1 className="sm:text-3xl md:text-4xl lg:text-5xl text-4xl font-bold tracking-tighter">
+            Tell us what you love
+          </h1>
+          <h3 className="text-xl">
+            This will help us curate events specially for you{" "}
+          </h3>
+          <div className="flex gap-4 flex-wrap py-8">
+            <button
+              className="outline outline-1 hover:text-blue-500 active:bg-blue-500 active:text-white focus:bg-blue-500 focus:text-white"
+              onClick={() => handleButtonClick("Business")}
+            >
+              Business
+            </button>
+            <button
+              className="outline outline-1 hover:text-blue-500 active:bg-blue-500 active:text-white focus:bg-blue-500 focus:text-white"
+              onClick={() => handleButtonClick("Music")}
+            >
+              Music
+            </button>
+            <button
+              className="outline outline-1 hover:text-blue-500 active:bg-blue-500 active:text-white focus:bg-blue-500 focus:text-white"
+              onClick={() => handleButtonClick("Comedy")}
+            >
+              Comedy
+            </button>
+            <button
+              className="outline outline-1 hover:text-blue-500 active:bg-blue-500 active:text-white focus:bg-blue-500 focus:text-white"
+              onClick={() => handleButtonClick("Parties")}
+            >
+              Parties
+            </button>
+            <button
+              className="outline outline-1 hover:text-blue-500 active:bg-blue-500 active:text-white focus:bg-blue-500 focus:text-white"
+              onClick={() => handleButtonClick("Dance")}
+            >
+              Dance
+            </button>
+            <button
+              className="outline outline-1 hover:text-blue-500 active:bg-blue-500 active:text-white focus:bg-blue-500 focus:text-white"
+              onClick={() => handleButtonClick("Dating")}
+            >
+              Dating
+            </button>
+            <button
+              className="outline outline-1 hover:text-blue-500 active:bg-blue-500 active:text-white focus:bg-blue-500 focus:text-white"
+              onClick={() => handleButtonClick("Workshop")}
+            >
+              Workshop
+            </button>
+            <button
+              className="outline outline-1 hover:text-blue-500 active:bg-blue-500 active:text-white focus:bg-blue-500 focus:text-white"
+              onClick={() => handleButtonClick("Food & Drinks")}
+            >
+              Food & Drinks
+            </button>
+            <button
+              className="outline outline-1 hover:text-blue-500 active:bg-blue-500 active:text-white focus:bg-blue-500 focus:text-white"
+              onClick={() => handleButtonClick("Sports")}
+            >
+              Sports
+            </button>
+            <button
+              className="outline outline-1 hover:text-blue-500 active:bg-blue-500 active:text-white focus:bg-blue-500 focus:text-white"
+              onClick={() => handleButtonClick("Fine Arts")}
+            >
+              Fine Arts
+            </button>
+            <button className="btn-Blue">Show More</button>
+          </div>
+        </div>
+      </section>
 
       {/* Features Section */}
       <section className="w-full pt-16 bg-white transition-all duration-500 ease-in-out">
@@ -208,11 +293,12 @@ const Welcome = () => {
               <h3 className="text-xl font-bold mb-2">{event.title}</h3>
               <p className="text-zinc-500 mb-1">{event.date}</p>
               <p className="text-zinc-500">{event.location}</p>
-              <button className="mt-4 bg-blue-600 text-white py-2 px-4 rounded-md transition duration-300 transform hover:bg-blue-700">
-                Learn More
-              </button>
+              <button className="btn-Blue my-2">Learn More</button>
             </div>
           ))}
+        </div>
+        <div className="flex justify-center items-center mb-16">
+          <button className="btn-Blue">View all events</button>
         </div>
       </section>
 
@@ -249,8 +335,7 @@ const Welcome = () => {
 
       {/* Contact Form Section */}
 
-      < Contact />
-    
+      <Contact />
     </div>
   );
 };

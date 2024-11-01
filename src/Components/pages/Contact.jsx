@@ -51,8 +51,8 @@ const Contact = () => {
       )}
 
       {/* Heading */}
-      <h1 className="text-4xl text-center pb-8 font-bold">
-        Contact <span className="text-neutral-500">Me</span>
+      <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center">
+        Contact Me
       </h1>
 
       {/* Contact Section */}
@@ -60,7 +60,7 @@ const Contact = () => {
         {/* Left - Contact Details */}
         <div className="w-full lg:w-1/2 flex flex-col items-center gap-8 px-4">
           <h2 className="text-2xl font-bold text-center">
-            Let's discuss something <span className="text-indigo-500">Cool</span> Together
+            Let's discuss something <span className="text-blue-500">Cool</span> Together
           </h2>
 
           <div className="space-y-4 text-center hidden lg:block">
@@ -90,11 +90,11 @@ const Contact = () => {
         {/* Right - Contact Form */}
         <div className="w-full lg:w-1/2 flex justify-center py-8 px-4">
           <form onSubmit={onSubmit} className="max-w-lg w-full bg-gray-100 p-6 rounded-lg shadow-md">
-            <h2 className="text-2xl font-semibold mb-4 text-center text-indigo-600">
+            <h2 className="text-2xl font-bold mb-4 text-center ">
               Get in Touch
             </h2>
             <div className="mb-4">
-              <label className="block text-lg mb-2 font-semibold text-indigo-600" htmlFor="name">
+              <label className="block text-lg mb-2 font-semibold " htmlFor="name">
                 Name
               </label>
               <input
@@ -102,12 +102,12 @@ const Contact = () => {
                 type="text"
                 id="name"
                 name="name"
-                placeholder="Your Name"
+                placeholder="Your name"
                 required
               />
             </div>
             <div className="mb-4">
-              <label className="block text-lg mb-2 font-semibold text-indigo-600" htmlFor="email">
+              <label className="block text-lg mb-2 font-semibold " htmlFor="email">
                 Email
               </label>
               <input
@@ -115,12 +115,12 @@ const Contact = () => {
                 type="email"
                 id="email"
                 name="email"
-                placeholder="Your Email"
+                placeholder="Your email"
                 required
               />
             </div>
             <div className="mb-4">
-              <label className="block text-lg mb-2 font-semibold text-indigo-600" htmlFor="message">
+              <label className="block text-lg mb-2 font-semibold " htmlFor="message">
                 Message
               </label>
               <textarea
@@ -128,12 +128,12 @@ const Contact = () => {
                 id="message"
                 rows="4"
                 name="message"
-                placeholder="Your Message"
+                placeholder="Your message..."
                 required
               />
             </div>
             <button
-              className="w-full bg-indigo-500 text-white py-2 rounded hover:bg-indigo-600"
+              className="w-full btn-Blue"
               type="submit"
             >
               {isSending ? "Sending..." : "Send Message"}
