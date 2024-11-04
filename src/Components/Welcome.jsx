@@ -265,7 +265,7 @@ const Welcome = () => {
             Why Choose Us
           </h2>
         </div>
-        <div className="grid gap-8 py-24 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 text-center px-6 sm:px-8 lg:px-32">
+        <div className="grid gap-8 py-24 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 text-center px-6 sm:px-8 lg:px-60">
           {featuresList.map((feature) => (
             <div
               key={feature.id}
@@ -284,7 +284,7 @@ const Welcome = () => {
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-center">
           Upcoming Events
         </h2>
-        <div className="grid gap-8 py-24 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-6 sm:px-8 lg:px-32">
+        <div className="grid gap-8 py-24 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-6 sm:px-8 lg:px-60">
           {eventCards.map((event) => (
             <div
               key={event.id}
@@ -309,7 +309,7 @@ const Welcome = () => {
             What Our Clients Say
           </h2>
         </div>
-        <div className="flex gap-8 px-36 py-32 max-sm:flex-col max-sm:px-8 max-sm:py-16">
+        <div className="flex gap-8 px-60 py-32 max-sm:flex-col max-sm:px-8 max-sm:py-16">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}

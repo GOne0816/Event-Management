@@ -42,7 +42,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="py-10 px-4 lg:px-28">
+    <div className="py-10 px-4">
       {/* Notification Message */}
       {showNotification && (
         <div className={`fixed top-5 right-5 text-white py-2 px-4 rounded shadow-lg ${submitted ? "bg-green-500" : "bg-red-500"}`}>
