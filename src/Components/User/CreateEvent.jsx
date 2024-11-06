@@ -22,22 +22,23 @@ const CreateEvent = () => {
         {/* Event Form */}
         <div className="w-2/3 py-16 flex gap-4">
           <form className="bg-white w-4/6 rounded-xl p-8">
-            <h1 className="font-bold text-xl">Publish Your Event</h1>
-            <h3 className="font-semibold text-lg">Step 1</h3>
+            <h1 className="font-bold text-xl mb-8">Publish Your Event</h1>
+            <h3 className="font-semibold text-lg mb-4">Step 1</h3>
 
             {/* Event Name Input Section */}
-            <div className="flex flex-col">
+            <div className="flex flex-col my-4">
               <label htmlFor="eventName">Event Name *</label>
               <input
                 type="text"
                 name="eventName"
                 id="eventName"
                 placeholder="Enter the name of your event"
+                className="ring-1 ring-zinc-500 rounded-xl p-2"
               />
             </div>
 
             {/* Event Type Input Secton */}
-            <div className="flex flex-col">
+            <div className="flex flex-col my-4">
               <label htmlFor="event">Event Type *</label>
               <label htmlFor="single" className="w-36 flex justify-between">
                 Single Event
@@ -92,9 +93,18 @@ const CreateEvent = () => {
             </div>
 
             {/* Event Description */}
-            <div>
-              <label htmlFor="description">Discription</label>
-              <input type="text" name="description" id="description" />
+            <div className="flex flex-col my-4">
+              <label htmlFor="description" className="">Discription</label>
+              <div>
+                <div>
+                  <button className="btn-Outlined">B</button>
+                  <button className="btn-Outlined"><i>I</i></button>
+                  <button className="btn-Outlined underline">U</button>
+                </div>
+                <div className="h-96 w-full ring-1 ring-zinc-500 rounded-xl p-4" contentEditable="true">
+                  Write event discription...
+                </div>
+              </div>
             </div>
 
             {/* Organizer Page */}
@@ -103,8 +113,8 @@ const CreateEvent = () => {
               <input type="text" name="" id="" />
             </div>
             <button className="btn-Blue">Continue</button>
-            <div>
-              <h3>Step 2</h3>
+            <div className="mt-8">
+              <h3 className="font-semibold text-lg mb-4">Step 2</h3>
               <ul>
                 <li><span> &#8226; </span> Add Event Banner</li>
                 <li><span> &#8226; </span> Setup Ticketing & Payment Details</li>
