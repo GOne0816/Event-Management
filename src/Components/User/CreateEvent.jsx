@@ -96,13 +96,36 @@ const CreateEvent = () => {
               <label htmlFor="description">Discription</label>
               <input type="text" name="description" id="description" />
             </div>
+
+            {/* Organizer Page */}
+            <div>
+              <label htmlFor="">Organizer Page ( <a className="text-blue-500" href="http://">create new page</a> )</label>
+              <input type="text" name="" id="" />
+            </div>
+            <button className="btn-Blue">Continue</button>
+            <div>
+              <h3>Step 2</h3>
+              <ul>
+                <li><span> &#8226; </span> Add Event Banner</li>
+                <li><span> &#8226; </span> Setup Ticketing & Payment Details</li>
+                <li><span> &#8226; </span> Publish Your Event Page</li>
+              </ul>
+            </div>
           </form>
           <div className="bg-white w-2/6 rounded-xl p-8">
             <h1>Tips</h1>
           </div>
         </div>
-        <div className="w-2/3 bg-white py-16 rounded-lg">
-          <h1 className="text-3xl font-bold text-center">Need Help ?</h1>
+        <div className="w-2/3 bg-white py-16 rounded-lg p-8">
+          <h1 className="text-2xl font-bold pb-4">Need Help ?</h1>
+          <ul className="text-blue-500">
+            <li><span> &#8226; </span><a className="hover:underline" href="http://">How to Create My Events Online</a></li>
+            <li><span> &#8226; </span><a className="hover:underline" href="http://">How to Send Email Invites to Attendees</a></li>
+            <li><span> &#8226; </span><a className="hover:underline" href="http://">How to keep track of your ticket sales</a></li>
+            <li><span> &#8226; </span><a className="hover:underline" href="http://">How to reach out to Potential Attendees from Your City</a></li>
+            <li><span> &#8226; </span><a className="hover:underline" href="http://">Have you already published your events on other platform like Facebook, Eventbrite or your own website?</a></li>
+            <li><span> &#8226; </span><a className="hover:underline" href="http://">Contact Us</a></li>
+          </ul>
         </div>
       </section>
     </div>
