@@ -116,6 +116,9 @@ const CreateEvent = () => {
                     <button className="btn-Outlined underline rounded-none">
                       U
                     </button>
+                    <button className="btn-Outlined rounded-none capitalize rounded-tr-xl">
+                      Clear
+                    </button>
                   </div>
                   <div className="pl-2">Write event description...</div>
                 </div>
