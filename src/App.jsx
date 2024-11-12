@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import NavBar from './Components/NavBar';
-import Welcome from './Components/Welcome';
-import Footer from './Components/Footer';
-import EventForYou from './Components/User/EventForYou';
-import Signup from './Components/User/signup';
-import CreateEvent from './Components/User/CreateEvent';
-import About from './Components/pages/About';
+import NavBar from './client/Components/NavBar';
+import Welcome from './client/Components/Welcome';
+import Footer from './client/Components/Footer';
+import EventForYou from './client/Components/User/EventForYou';
+import Signup from './client/Components/User/signup';
+import CreateEvent from './client/Components/User/CreateEvent';
+import About from './client/Components/pages/About';
 
 const App = () => {
   return (
