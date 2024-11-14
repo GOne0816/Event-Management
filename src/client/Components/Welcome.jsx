@@ -88,13 +88,13 @@ const Welcome = () => {
         "This platform has revolutionized the way I manage events. It's a game-changer!",
     },
     {
-      name: "Tiwari BKL",
+      name: "Aditya Tiwari",
       role: "Conference Organizer",
       quote:
         "The ease of use and powerful features make this the go-to solution for all our event needs.",
     },
     {
-      name: "Hujaifa BSDK",
+      name: "Hujaifa Ahmed",
       role: "Photo-Copy Manager",
       quote:
         "I can't imagine planning weddings without this tool. It's become an essential part of my business.",
