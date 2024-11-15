@@ -1,4 +1,10 @@
 import React from "react";
+import { Label } from "@/components/ui/label";
+import ReqInput from "../../components/ui/RequiredInput";
+import RadioB from "../../components/ui/Radio";
+import Select from "../../components/ui/RequiredSelect";
+import DatePicker from "../../components/ui/DatePicker";
+import EventDescription from "../../components/ui/EventDesc";
 
 const CreateEvent = () => {
   return (
@@ -15,7 +21,7 @@ const CreateEvent = () => {
               Check out this product tour video and learn how you can make the
               most out of Festify and it's features!
             </p>
-            <button className="btn-Outlined">Watch Now</button>
+            <button className="btn-Blue">Watch Now</button>
           </div>
         </div>
 
@@ -27,102 +33,30 @@ const CreateEvent = () => {
 
             {/* Event Name Input Section */}
             <div className="flex flex-col my-4">
-              <label htmlFor="eventName">
-                Event Name <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                name="eventName"
-                id="eventName"
-                placeholder="Enter the name of your event"
-                className="ring-1 ring-zinc-500 rounded-xl p-2"
-              />
+              <ReqInput />
             </div>
 
             {/* Event Type Input Secton */}
-            <div className="flex flex-col my-4">
-              <label htmlFor="event">
-                Event Type <span className="text-red-500">*</span>
-              </label>
-              <label htmlFor="single" className="w-36 flex justify-between">
-                Single Event
-                <input
-                  type="radio"
-                  name="eventOpt"
-                  id="single"
-                  value="Single Event"
-                />
-              </label>
-              <label htmlFor="recurring" className="w-36 flex justify-between">
-                Recurring Event
-                <input
-                  type="radio"
-                  name="eventOpt"
-                  id="recurring"
-                  value="Recurring Event"
-                />
-              </label>
+            <div className="flex flex-col my-4 space-y-2">
+              <Label htmlFor="">
+                Event Type <span className="text-destructive">*</span>
+              </Label>
+              <RadioB />
             </div>
 
             {/* Time & Date Section */}
-            <div className="flex flex-col w-80 max-sm:w-full">
-              <label
-                htmlFor="startingDate"
-                className="flex justify-between items-center"
-              >
-                Start Time <span className="text-red-500">*</span>
-                <input type="date" name="startingDate" id="" />
-              </label>
-              <label
-                htmlFor="startingDate"
-                className="flex justify-between items-center"
-              >
-                End Time
-                <input type="date" name="endingDate" id="" />
-              </label>
+            <div className="flex flex-col w-72 max-sm:w-full">
+              <DatePicker />
             </div>
 
             {/* Where will your event take place? */}
-            <div>
-              <label htmlFor="">
-                Where will your event take place?
-                <select name="Where will your event take place?" id="">
-                  pl
-                  <option value="">Select a location</option>
-                  <option value="">Venue</option>
-                  <option value="">Online</option>
-                  <option value="">Recorderd Events</option>
-                </select>
-              </label>
+            <div className="my-4">
+              <Select />
             </div>
 
             {/* Event Description */}
             <div className="flex flex-col my-4">
-              <label htmlFor="description" className="">
-                Discription <span className="text-red-500">*</span>
-              </label>
-              <div>
-                <div
-                  className="h-96 w-full ring-1 ring-zinc-500 rounded-xl"
-                  contentEditable="true"
-                >
-                  <div className="mb-2">
-                    <button className="btn-Outlined rounded-none rounded-tl-xl">
-                      B
-                    </button>
-                    <button className="btn-Outlined rounded-none">
-                      <i>I</i>
-                    </button>
-                    <button className="btn-Outlined underline rounded-none">
-                      U
-                    </button>
-                    <button className="btn-Outlined rounded-none capitalize rounded-tr-xl">
-                      Clear
-                    </button>
-                  </div>
-                  <div className="pl-2">Write event description...</div>
-                </div>
-              </div>
+              <EventDescription />
             </div>
 
             {/* Organizer Page */}
@@ -168,15 +102,25 @@ const CreateEvent = () => {
             </div>
             <div className="bg-zinc-300 h-0.5 w-full rounded-full"></div>
             <div className="my-4">
-              <h1 className="text-lg font-semibold">Or, import from other platforms</h1>
-              <p className="py-4">Have you already published your events on other platform like Facebook, Eventbrite or your own website?</p>
+              <h1 className="text-lg font-semibold">
+                Or, import from other platforms
+              </h1>
+              <p className="py-4">
+                Have you already published your events on other platform like
+                Facebook, Eventbrite or your own website?
+              </p>
               <button className="btn-Blue">IMPORT EVENTS</button>
             </div>
             <div className="bg-zinc-300 h-0.5 w-full rounded-full"></div>
             <div className="my-4">
-              <h1 className="text-lg font-semibold">Improve your event's performance</h1>
+              <h1 className="text-lg font-semibold">
+                Improve your event's performance
+              </h1>
               <p className="py-4">
-              Improve your event's performanceDon't forget to add Tickets on AllEvents in your banners & designs.It helps event-goers know where they can find an option to buy tickets.</p>
+                Improve your event's performanceDon't forget to add Tickets on
+                AllEvents in your banners & designs.It helps event-goers know
+                where they can find an option to buy tickets.
+              </p>
               <button className="btn-Blue">DOWNLOAD MEDIA KIT</button>
             </div>
           </div>

@@ -1,9 +1,8 @@
 import React from "react";
 import { RiArrowRightSFill } from "react-icons/ri";
-import JagJeevan from "./Assets/GOne.png";
-import JagJeevan2 from "./Assets/GOne2.jpg";
-import Tiwari from "./Assets/Tiwari.jpg";
-import Hybrid from "./Assets/Hujaifa.jpg";
+import JagJeevan2 from "../Assets/GOne2.jpg";
+import Tiwari from "../Assets/Tiwari.jpg";
+import Hybrid from "../Assets/Hujaifa.jpg";
 
 const About = () => {
   const founders = [

@@ -5,7 +5,7 @@ import { FaRegCalendar, FaMapMarkerAlt } from "react-icons/fa";
 import { MdOutlinePeopleAlt, MdOutlineSignalCellularAlt } from "react-icons/md";
 import { FaCircleCheck } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa6";
-import Contact from "./pages/Contact";
+import Contact from "./Pages Components/Contact";
 
 const Welcome = () => {
   const featuresList = [

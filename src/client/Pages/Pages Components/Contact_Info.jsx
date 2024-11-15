@@ -8,7 +8,7 @@ import { FaTwitter } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import { FaInstagram } from "react-icons/fa6";
 
-const info = () => {
+const contactInfo = () => {
   return (
     <div>
        <div className='space-y-4 text-center lg:hidden '>
@@ -36,4 +36,4 @@ const info = () => {
   )
 }
 
-export default info
+export default contactInfo
