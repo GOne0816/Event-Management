@@ -1,6 +1,12 @@
 import React from "react";
+import { useMemo, useState } from "react";
+import { FaEye } from "react-icons/fa6";
+import { FaEyeSlash } from "react-icons/fa6";
 
 const signup = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const toggleVisibility = () => setIsVisible((prevState) => !prevState);
+
   return (
     <div className="w-full h-dvh flex justify-center items-center">
       <div className="max-w-md w-11/12 h-[580px] bg-gray-100 rounded-xl p-12">
@@ -53,8 +59,22 @@ const signup = () => {
                 type="password"
                 name="password"
                 id="password"
+                // type={isVisible ? "text" : "password"}
                 // onChange={handlePasswordChange}
               />
+              {/* <button
+                className=""
+                onClick={toggleVisibility}
+                aria-label={isVisible ? "Hide password" : "Show password"}
+                aria-pressed={isVisible}
+                aria-controls="password"
+              >
+                {isVisible ? (
+                  <FaEyeSlash size={16} strokeWidth={2} aria-hidden="true" />
+                ) : (
+                  <FaEye size={16} strokeWidth={2} aria-hidden="true" />
+                )}
+              </button> */}
             </div>
 
             <div className="flex justify-center items-center mt-4">
