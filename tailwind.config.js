@@ -67,6 +67,7 @@ export default {
   },
   plugins: [
     require("tailwindcss-animate"),
+    require('daisyui'),
     addVariablesForColors,
     function ({ matchUtilities, theme }) {
       matchUtilities(
