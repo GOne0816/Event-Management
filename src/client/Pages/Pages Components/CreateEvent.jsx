@@ -1,5 +1,6 @@
 import React from "react";
 import { Label } from "@/components/ui/label";
+import { Skeleton } from "@/components/ui/skeleton"
 import ReqInput from "../../components/ui/RequiredInput";
 import RadioB from "../../components/ui/Radio";
 import Select from "../../components/ui/RequiredSelect";
@@ -11,8 +12,8 @@ const CreateEvent = () => {
     <div className="bg-zinc-100 h-[100%] w-full">
       <section className=" flex justify-center items-center flex-col gap-8 py-8 max-sm:py-4">
         {/* Watch Now Video Card */}
-        <div className="w-2/3 bg-white p-8 flex gap-8 rounded-xl max-sm:w-[90%]">
-          <div className="h-28 min-w-28 bg-zinc-200 rounded-xl"></div>
+        <div className="w-2/3 bg-white p-8 flex gap-8 rounded-xl max-sm:w-[90%] max-sm:flex-col">
+          <Skeleton className="min-w-[120px] h-[120px] max-sm:w-[120px] rounded-lg" />
           <div className="space-y-2">
             <h1 className="text-lg font-bold">
               Here's a video to help you out!
@@ -56,7 +57,7 @@ const CreateEvent = () => {
 
             {/* Event Description */}
             <div className="flex flex-col my-4">
-              <EventDescription />
+              <EventDescription className=""/>
             </div>
 
             {/* Organizer Page */}

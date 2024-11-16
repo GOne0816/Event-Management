@@ -31,7 +31,7 @@ const About = () => {
 
   return (
     <div className="h-full">
-      <section className="px-8 md:px-80 py-16  space-y-8">
+      <section className="px-8 md:px-80 py-16 space-y-8">
         <h1 className="text-4xl font-extrabold tracking-tighter md:text-5xl text-center">
           We reimagine how you discover events
         </h1>
