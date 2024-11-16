@@ -6,6 +6,8 @@ import { MdOutlinePeopleAlt, MdOutlineSignalCellularAlt } from "react-icons/md";
 import { FaCircleCheck } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa6";
 import Contact from "./Pages Components/Contact";
+import Hero from "../components/ui/BackgroundBeam";
+import Categ from "../components/ui/Category";
 
 const Welcome = () => {
   const featuresList = [
@@ -161,27 +163,7 @@ const Welcome = () => {
   return (
     <div className="w-full flex flex-col items-center">
       {/* Hero Section */}
-      <div className="text-white bg-zinc-900 flex flex-col justify-center items-center min-h-[60vh] w-full transition-all duration-500 ease-in-out px-6 lg:px-48 lg:py-20">
-        <h1 className="text-center p-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold">
-          Manage Your Events with Ease
-        </h1>
-        <p className="text-center px-2 sm:px-6 md:px-12 lg:mx-10 xl:mx-40 pb-4 text-md sm:text-lg max-sm:text-xs">
-          Streamline your event planning process with our powerful management
-          tools. From small gatherings to large conferences, we've got you
-          covered.
-        </p>
-        <p className="py-4 text-md sm:text-lg font-bold text-center max-sm:text-sm">
-          Discover the most happening events around you
-        </p>
-        <div className="flex justify-center items-center bg-white px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 w-full max-w-md">
-          <RiSearchLine className="text-black text-lg" />
-          <input
-            type="text"
-            placeholder="Search Events, Categories, Location..."
-            className="px-4 py-2 outline-none text-black w-full"
-          />
-        </div>
-      </div>
+      <Hero />
 
       {/* What you love Section */}
       <section className="w-full">
@@ -193,68 +175,9 @@ const Welcome = () => {
             This will help us curate events specially for you{" "}
           </h3>
           <div className="flex gap-4 flex-wrap py-8">
-            <button
-              className="outline outline-1 hover:text-blue-500 active:bg-blue-500 active:text-white focus:bg-blue-500 focus:text-white"
-              onClick={() => handleButtonClick("Business")}
-            >
-              Business
-            </button>
-            <button
-              className="outline outline-1 hover:text-blue-500 active:bg-blue-500 active:text-white focus:bg-blue-500 focus:text-white"
-              onClick={() => handleButtonClick("Music")}
-            >
-              Music
-            </button>
-            <button
-              className="outline outline-1 hover:text-blue-500 active:bg-blue-500 active:text-white focus:bg-blue-500 focus:text-white"
-              onClick={() => handleButtonClick("Comedy")}
-            >
-              Comedy
-            </button>
-            <button
-              className="outline outline-1 hover:text-blue-500 active:bg-blue-500 active:text-white focus:bg-blue-500 focus:text-white"
-              onClick={() => handleButtonClick("Parties")}
-            >
-              Parties
-            </button>
-            <button
-              className="outline outline-1 hover:text-blue-500 active:bg-blue-500 active:text-white focus:bg-blue-500 focus:text-white"
-              onClick={() => handleButtonClick("Dance")}
-            >
-              Dance
-            </button>
-            <button
-              className="outline outline-1 hover:text-blue-500 active:bg-blue-500 active:text-white focus:bg-blue-500 focus:text-white"
-              onClick={() => handleButtonClick("Dating")}
-            >
-              Dating
-            </button>
-            <button
-              className="outline outline-1 hover:text-blue-500 active:bg-blue-500 active:text-white focus:bg-blue-500 focus:text-white"
-              onClick={() => handleButtonClick("Workshop")}
-            >
-              Workshop
-            </button>
-            <button
-              className="outline outline-1 hover:text-blue-500 active:bg-blue-500 active:text-white focus:bg-blue-500 focus:text-white"
-              onClick={() => handleButtonClick("Food & Drinks")}
-            >
-              Food & Drinks
-            </button>
-            <button
-              className="outline outline-1 hover:text-blue-500 active:bg-blue-500 active:text-white focus:bg-blue-500 focus:text-white"
-              onClick={() => handleButtonClick("Sports")}
-            >
-              Sports
-            </button>
-            <button
-              className="outline outline-1 hover:text-blue-500 active:bg-blue-500 active:text-white focus:bg-blue-500 focus:text-white"
-              onClick={() => handleButtonClick("Fine Arts")}
-            >
-              Fine Arts
-            </button>
-            <button className="btn-Blue">Show More</button>
+            <Categ />
           </div>
+          <button className="btn-Blue">Show More</button>
         </div>
       </section>
 
