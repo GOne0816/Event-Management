@@ -1,5 +1,14 @@
 import React from "react";
 import { RiArrowRightSFill } from "react-icons/ri";
+import GridBackground from "../../components/ui/GridBG";
+import { Button } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
 import JagJeevan2 from "../Assets/GOne2.jpg";
 import Tiwari from "../Assets/Tiwari.jpg";
 import Hybrid from "../Assets/Hujaifa.jpg";
@@ -31,6 +40,7 @@ const About = () => {
 
   return (
     <div className="h-full">
+      <GridBackground para="Making The World #Happening" />
       <section className="px-8 md:px-80 py-16 space-y-8">
         <h1 className="text-4xl font-extrabold tracking-tighter md:text-5xl text-center">
           We reimagine how you discover events
@@ -55,10 +65,48 @@ const About = () => {
           seamless ticketing and promotion that empowers organizers to bring
           their events to life and share them with the world.
         </p>
-        <button className="btn-Text flex items-center pl-2">
+        {/* <button className="btn-Text flex items-center pl-2">
           <RiArrowRightSFill className="text-lg" />
           Read our story
-        </button>
+        </button> */}
+        <Accordion type="single" collapsible>
+          <AccordionItem value="item-1">
+            <Button variant="outline">
+              <AccordionTrigger>Read our story</AccordionTrigger>
+            </Button>
+
+            <AccordionContent>
+              <div className="bg-zinc-100 shadow-md rounded-3xl p-8 space-y-4">
+                <p className="text-lg">
+                  The idea of Festify came to life when Aditya Tiwari and Jag Jeevan found
+                  it challenging to discover events around them, which caused
+                  them to miss out on events they would have wanted to attend.
+                </p>
+                <p className="text-lg">
+                  In 2024, Festify was founded to ensure that nobody would
+                  miss out on an event they would have wanted to attend. Since
+                  then, there has been no looking back - Festify grew to
+                  become the world's largest event discovery platform and helps
+                  more than 20 million people around the world discover events
+                  every month.
+                </p>
+                <h1 className="text-3xl font-bold tracking-tighter pt-4">Our Mission</h1>
+                <p className="text-lg">
+                  We are on a mission to simplify event discovery, helping
+                  people discover new events and experiences anywhere, anytime.
+                  We motivate people to go out, suggest events they may like,
+                  and enhance their ticketing booking experience.
+                </p>
+                <h1 className="text-3xl font-bold tracking-tighter pt-4">Our Vision</h1>
+                <p className="text-lg">
+                  We envision a world where people truly live, not just exist,
+                  and #StayHappening is the norm. People go out, attend events,
+                  meet people in real life, and create memories of a lifetime.
+                </p>
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
 
         {/* How we make magic happen! */}
         <div className="pt-16">
@@ -129,6 +177,15 @@ const About = () => {
           </div>
         </div>
       </section>
+      <div className="relative flex justify-center items-center">
+        <GridBackground
+          para="Join the Revolution"
+          para2="We are always looking for people who are creative, dynamic and #happening!"
+        />
+        <Button className="absolute bottom-32 max-sm:bottom-12" variant="">
+          Join Us
+        </Button>
+      </div>
     </div>
   );
 };

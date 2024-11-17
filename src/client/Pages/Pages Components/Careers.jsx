@@ -7,7 +7,7 @@ import FocusCards from "../../components/ui/FocusCards"
 const Careers = () => {
   return (
     <div>
-      <GridBackground para={"Join us in a Happening Journey"} />
+      <GridBackground para={"Join us in a Happening Journey"} para2={"Challenge your limits. Meet awesome people. Find your ikigai."}/>
 
       {/* First Element */}
       <div className="px-80 py-20 flex max-sm:px-8 max-sm:py-8 max-sm:flex-col-reverse gap-24 max-sm:gap-8">
@@ -15,7 +15,7 @@ const Careers = () => {
           <h1 className="text-4xl font-bold">WE'RE ON A MISSION OF</h1>
           <h2 className="py-2">Making the world #Happening</h2>
           <p className="py-4">
-            In 2011, AllEvents started when we realized that events create a
+            In 2024, Festify started when we realized that events create a
             positive impact. Since then, we try that people never miss out on
             good events they would love to attend.
           </p>
@@ -38,7 +38,9 @@ const Careers = () => {
 
       {/* Third Element */}
       <div className="px-2">
-        <h1 className="text-4xl font-bold text-center mb-16">We can't stay quiet for long</h1>
+        <h1 className="text-4xl font-bold text-center mb-4">We can't stay quiet for long</h1>
+        <p className="text-lg font-bold text-center mb-2">We need fuel to work!</p>
+        <p className="text-lg font-bold text-center mb-16">And our fuel is food, trips & parties.</p>
         <FocusCards />
       </div>
       <GridBackground

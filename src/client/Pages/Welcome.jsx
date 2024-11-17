@@ -1,13 +1,11 @@
-import React, { useRef } from "react";
-import { useState } from "react";
-import { RiSearchLine } from "react-icons/ri";
+import React from "react";
 import { FaRegCalendar, FaMapMarkerAlt } from "react-icons/fa";
 import { MdOutlinePeopleAlt, MdOutlineSignalCellularAlt } from "react-icons/md";
-import { FaCircleCheck } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa6";
 import Contact from "./Pages Components/Contact";
 import Hero from "../components/ui/BackgroundBeam";
 import Categ from "../components/ui/Category";
+import { Link } from "react-router-dom";
 
 const Welcome = () => {
   const featuresList = [
@@ -103,63 +101,6 @@ const Welcome = () => {
     },
   ];
 
-  const notify = () => {
-    toast(
-      <div className="flex">
-        <div className="p-5 pr-0">
-          <FaCircleCheck size={20} />
-        </div>
-        <h1 className="p-5 font-semibold">Message sent successfully!</h1>
-      </div>
-    );
-  };
-  const nameInputRef = useRef();
-  const emailInputRef = useRef();
-  const messageRef = useRef();
-  const subjectRef = useRef();
-  const onSubmit = async (event) => {
-    event.preventDefault();
-
-    const formData = new FormData(event.target);
-
-    formData.append("access_key", "bcdc75f6-2d3f-4d73-8734-be1152ccfe26");
-
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
-
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: json,
-    }).then((res) => res.json());
-
-    if (res.success) {
-      console.log("Success", res);
-    }
-    nameInputRef.current.value = "";
-    emailInputRef.current.value = "";
-    messageRef.current.value = "";
-    subjectRef.current.value = "";
-    notify();
-  };
-
-  const [selectedButtons, setSelectedButtons] = useState([]);
-
-  const handleButtonClick = (buttonId) => {
-    setSelectedButtons((prevSelected) => {
-      if (prevSelected.includes(buttonId)) {
-        // Button is already selected, deselect it
-        return prevSelected.filter((id) => id !== buttonId);
-      } else {
-        // Button is not selected, select it
-        return [...prevSelected, buttonId];
-      }
-    });
-  };
-
   return (
     <div className="w-full flex flex-col items-center">
       {/* Hero Section */}
@@ -221,7 +162,8 @@ const Welcome = () => {
           ))}
         </div>
         <div className="flex justify-center items-center mb-16">
-          <button className="btn-Blue">View all events</button>
+          <button className="btn-Blue"><Link to="/eventForYou">View all events</Link></button>
+          
         </div>
       </section>
 
@@ -257,7 +199,6 @@ const Welcome = () => {
       </section>
 
       {/* Contact Form Section */}
-
       <Contact />
     </div>
   );
