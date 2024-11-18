@@ -1,5 +1,4 @@
 import React from "react";
-import { RiArrowRightSFill } from "react-icons/ri";
 import GridBackground from "../../components/ui/GridBG";
 import { Button } from "@/components/ui/button";
 import {
@@ -65,10 +64,6 @@ const About = () => {
           seamless ticketing and promotion that empowers organizers to bring
           their events to life and share them with the world.
         </p>
-        {/* <button className="btn-Text flex items-center pl-2">
-          <RiArrowRightSFill className="text-lg" />
-          Read our story
-        </button> */}
         <Accordion type="single" collapsible>
           <AccordionItem value="item-1">
             <Button variant="outline">
