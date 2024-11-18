@@ -1,6 +1,6 @@
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import BoldIUnder from "../../components/ui/BIU"
+import BoldIUnder from "./BIU"
 
 
 export default function Textarea02() {
