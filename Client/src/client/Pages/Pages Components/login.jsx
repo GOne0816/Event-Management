@@ -6,10 +6,19 @@ const Login = () => {
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => setIsVisible((prevState) => !prevState);
 
+  const [user,setUser] = useState({
+    email: "",
+    password: "",
+  })
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+    console.log(user);
+  }
+
   return (
     <div className="w-full h-screen flex justify-center items-center bg-gray-50">
       <div className="max-w-md w-11/12 sm:w-9/12 md:w-8/12 lg:w-6/12 xl:w-4/12 bg-gray-100 rounded-xl p-8 shadow-lg">
-        <form>
+        <form onSubmit={handleSubmit}>
           <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-center">
             Have an Account
           </h1>
@@ -29,6 +38,9 @@ const Login = () => {
                 name="email"
                 id="email"
                 placeholder="j@example.com"
+                value={user.email}
+                onChange={(e) => setUser({ ...user, email: e.target.value
+                  })}
               />
             </div>
 
@@ -44,6 +56,9 @@ const Login = () => {
                   name="password"
                   id="password"
                   placeholder="••••••••"
+                  value={user.password}
+                  onChange={(e)=>setUser({...user,password:e.target.value})}
+
                 />
                 <button
                   type="button"
@@ -91,6 +106,8 @@ const Login = () => {
     </div>
   );
 };
+
+
 
 export default Login;
 

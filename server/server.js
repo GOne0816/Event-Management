@@ -5,8 +5,21 @@ const connectDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes');
 const PORT = process.env.PORT || 3003;
 const errorMiddleware = require('./middlewares/error-middleware')
+const cors = require('cors')
+
+//<--------------------------------------CORS DEFINITION------------------------------------------------->
+
+var corsOptions = {
+    origin: 'http://localhost:5173',
+    methods:"GET, POST,PUT,DELETE, PATCH, HEAD",
+    optionsSuccessStatus: 200,
+    Credentials:true,
+  }
+  app.use(cors(corsOptions))
+
 
 app.use(express.json());
+
 
 app.use('/',userRoutes);
 

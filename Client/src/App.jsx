@@ -1,24 +1,26 @@
-import React from 'react';
-import './App.css';
-import { Route, Routes } from 'react-router-dom';
-import NavBar from './client/Pages/NavBar';
-import Welcome from './client/Pages/Welcome';
-import Footer from './client/Pages/Footer';
-import EventForYou from './client/Pages/Pages Components/EventForYou';
-import Signup from './client/Pages/Pages Components/signup';
-import Login from './client/Pages/Pages Components/login'
-import CreateEvent from './client/Pages/Pages Components/CreateEvent';
-import About from './client/Pages/Pages Components/About';
-import Careers from './client/Pages/Pages Components/Careers';
-import TermsOfService from './client/Pages/Pages Components/Terms_of_Services';
-import Support from './client/Pages/Pages Components/Support';
-import Privacy from './client/Pages/Pages Components/Privacy';
-import ContactUs from './client/Pages/Pages Components/Contact';
+import React, { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import NavBar from "./client/Pages/NavBar";
+import Welcome from "./client/Pages/Welcome";
+import Footer from "./client/Pages/Footer";
+import EventForYou from "./client/Pages/Pages Components/EventForYou";
+import Signup from "./client/Pages/Pages Components/signup";
+import Login from "./client/Pages/Pages Components/login";
+import CreateEvent from "./client/Pages/Pages Components/CreateEvent";
+import About from "./client/Pages/Pages Components/About";
+import Careers from "./client/Pages/Pages Components/Careers";
+import TermsOfService from "./client/Pages/Pages Components/Terms_of_Services";
+import Support from "./client/Pages/Pages Components/Support";
+import Privacy from "./client/Pages/Pages Components/Privacy";
+import ContactUs from "./client/Pages/Pages Components/Contact";
+import Error from "./client/Pages/Pages Components/Error";
 
 const App = () => {
+  const [showNavAndFooter, setShowNavAndFooter] = useState(true);
+
   return (
     <div>
-      <NavBar />
+      {showNavAndFooter && <NavBar />}
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/createEvent" element={<CreateEvent />} />
@@ -31,9 +33,10 @@ const App = () => {
         <Route path="/terms+of+service" element={<TermsOfService />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/contact+us" element={<ContactUs />} />
+        <Route path="/*" element={<Error setShowNavAndFooter={setShowNavAndFooter} />} />
       </Routes>
-      <Footer />
-      </div>
+      {showNavAndFooter && <Footer />}
+    </div>
   );
 };
 

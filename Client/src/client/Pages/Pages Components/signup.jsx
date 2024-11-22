@@ -1,15 +1,68 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Signup = () => {
+  const navigate = useNavigate(); // Initialize navigate for redirection
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => setIsVisible((prevState) => !prevState);
 
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  // Handling the form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(user);
+
+    try {
+      const response = await fetch("http://localhost:8000/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      });
+
+      if (response.ok) {
+        toast.success("Account created successfully! Redirecting to login...", {
+          position: "top-right",
+          autoClose: 3000,
+        });
+        setTimeout(() => {
+          setUser({
+            name: "",
+            email: "",
+            password: "",
+          });
+          navigate("/login"); // Redirect to the login page
+        }, 3000); // Delay to let the toast display before redirecting
+      } else {
+        const errorData = await response.json();
+        toast.error(errorData.message || "Signup failed. Please try again.", {
+          position: "top-right",
+          autoClose: 3000,
+        });
+      }
+    } catch (error) {
+      console.error("Registration error", error);
+      toast.error("Something went wrong. Please try again later.", {
+        position: "top-right",
+        autoClose: 3000,
+      });
+    }
+  };
+
   return (
     <div className="w-full h-screen flex justify-center items-center bg-gray-50">
+      <ToastContainer /> {/* Toast notifications container */}
       <div className="max-w-md w-11/12 sm:w-9/12 md:w-8/12 lg:w-6/12 xl:w-4/12 bg-gray-100 rounded-xl p-8 shadow-lg">
-        <form>
+        <form onSubmit={handleSubmit}>
           <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-center">
             Create an account
           </h1>
@@ -29,6 +82,8 @@ const Signup = () => {
                 name="name"
                 id="name"
                 placeholder="Your Name"
+                value={user.name}
+                onChange={(e) => setUser({ ...user, name: e.target.value })}
               />
             </div>
 
@@ -43,6 +98,8 @@ const Signup = () => {
                 name="email"
                 id="email"
                 placeholder="j@example.com"
+                value={user.email}
+                onChange={(e) => setUser({ ...user, email: e.target.value })}
               />
             </div>
 
@@ -58,6 +115,10 @@ const Signup = () => {
                   name="password"
                   id="password"
                   placeholder="••••••••"
+                  value={user.password}
+                  onChange={(e) =>
+                    setUser({ ...user, password: e.target.value })
+                  }
                 />
                 <button
                   type="button"
@@ -94,13 +155,16 @@ const Signup = () => {
         {/* Log In Link */}
         <p className="text-center text-sm mt-6">
           Have an account?{" "}
-          <Link to="/login" className="text-blue-600 underline hover:text-blue-800">
+          <Link
+            to="/login"
+            className="text-blue-600 underline hover:text-blue-800"
+          >
             Log In here
           </Link>
         </p>
       </div>
     </div>
   );
-}
+};
 
 export default Signup;
