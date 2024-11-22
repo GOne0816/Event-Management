@@ -1,5 +1,6 @@
 const {Schema, model } = require ('mongoose')
 const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
 
 const userSchema = new Schema({
     name:{
@@ -29,6 +30,24 @@ userSchema.pre("save", async function (next) {
     }
 });
 
+// json web tokens
+
+userSchema.methods.generateToken = async function(){
+    try{
+        return jwt.sign({
+            userId: this.id.toString(),
+            email: this.email,
+            isAdmin :this.isAdmin,
+        },
+        process.env.JWT_SECRET_KEY,{
+            expiresIn: '30d'
+        }
+    )
+    }
+    catch(error){
+        console.error("error in generating token")
+    }
+}
 
 
 const User = model('User', userSchema);
