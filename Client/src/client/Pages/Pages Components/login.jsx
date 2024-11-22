@@ -1,29 +1,69 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => setIsVisible((prevState) => !prevState);
 
-  const [user,setUser] = useState({
+  const [user, setUser] = useState({
     email: "",
     password: "",
-  })
-  const handleSubmit = (e) =>{
+  });
+
+  const navigate = useNavigate(); // Initialize navigate for redirection
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(user);
-  }
+
+    try {
+      const response = await fetch("http://localhost:8000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      });
+
+      if (response.ok) {
+        const data = await response.json(); // Parse server response if needed
+        toast.success("Login successful! Redirecting to home page...", {
+          position: "top-right",
+          autoClose: 2000,
+        });
+
+        setTimeout(() => {
+          navigate("/"); // Redirect to the home page
+        }, 1500);
+      } else {
+        const errorData = await response.json();
+        toast.error(errorData.message || "Login failed. Please try again.", {
+          position: "top-right",
+          autoClose: 1500,
+        });
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      toast.error("Something went wrong. Please try again later.", {
+        position: "top-right",
+        autoClose: 1500,
+      });
+    }
+  };
 
   return (
     <div className="w-full h-screen flex justify-center items-center bg-gray-50">
+      <ToastContainer /> {/* Toast notifications container */}
       <div className="max-w-md w-11/12 sm:w-9/12 md:w-8/12 lg:w-6/12 xl:w-4/12 bg-gray-100 rounded-xl p-8 shadow-lg">
         <form onSubmit={handleSubmit}>
           <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-center">
-            Have an Account
+            Log In to Your Account
           </h1>
           <p className="text-gray-500 text-center mt-2">
-            Enter your details below to get started.
+            Enter your credentials below to log in.
           </p>
 
           <div className="flex flex-col mt-6 gap-4">
@@ -39,8 +79,7 @@ const Login = () => {
                 id="email"
                 placeholder="j@example.com"
                 value={user.email}
-                onChange={(e) => setUser({ ...user, email: e.target.value
-                  })}
+                onChange={(e) => setUser({ ...user, email: e.target.value })}
               />
             </div>
 
@@ -57,8 +96,7 @@ const Login = () => {
                   id="password"
                   placeholder="••••••••"
                   value={user.password}
-                  onChange={(e)=>setUser({...user,password:e.target.value})}
-
+                  onChange={(e) => setUser({ ...user, password: e.target.value })}
                 />
                 <button
                   type="button"
@@ -80,7 +118,7 @@ const Login = () => {
               type="submit"
               className="bg-gray-800 text-white p-3 rounded-lg w-full font-semibold hover:bg-gray-900 transition duration-300"
             >
-              Login
+              Log In
             </button>
           </div>
         </form>
@@ -94,7 +132,7 @@ const Login = () => {
 
         {/* Sign-Up Link */}
         <p className="text-center text-sm mt-6">
-          Create new Account?{" "}
+          Don't have an account?{" "}
           <Link
             to="/signup"
             className="text-blue-600 underline hover:text-blue-800"
@@ -107,7 +145,4 @@ const Login = () => {
   );
 };
 
-
-
 export default Login;
-

@@ -19,7 +19,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(user);
-
+//<-----------------------------------------------connecting to backend server and store data in database-------------------------------------------
     try {
       const response = await fetch("http://localhost:8000/signup", {
         method: "POST",
@@ -32,7 +32,7 @@ const Signup = () => {
       if (response.ok) {
         toast.success("Account created successfully! Redirecting to login...", {
           position: "top-right",
-          autoClose: 3000,
+          autoClose: 2000,
         });
         setTimeout(() => {
           setUser({
@@ -41,19 +41,19 @@ const Signup = () => {
             password: "",
           });
           navigate("/login"); // Redirect to the login page
-        }, 3000); // Delay to let the toast display before redirecting
+        }, 1500); // Delay to let the toast display before redirecting
       } else {
         const errorData = await response.json();
         toast.error(errorData.message || "Signup failed. Please try again.", {
           position: "top-right",
-          autoClose: 3000,
+          autoClose: 1500,
         });
       }
     } catch (error) {
       console.error("Registration error", error);
       toast.error("Something went wrong. Please try again later.", {
         position: "top-right",
-        autoClose: 3000,
+        autoClose: 1500,
       });
     }
   };
