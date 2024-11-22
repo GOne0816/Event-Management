@@ -6,6 +6,7 @@ import Welcome from './client/Pages/Welcome';
 import Footer from './client/Pages/Footer';
 import EventForYou from './client/Pages/Pages Components/EventForYou';
 import Signup from './client/Pages/Pages Components/signup';
+import Login from './client/Pages/Pages Components/login'
 import CreateEvent from './client/Pages/Pages Components/CreateEvent';
 import About from './client/Pages/Pages Components/About';
 import Careers from './client/Pages/Pages Components/Careers';
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/createEvent" element={<CreateEvent />} />
         <Route path="/eventForYou" element={<EventForYou />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/support" element={<Support />} />
