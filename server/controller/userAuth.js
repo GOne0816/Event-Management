@@ -22,7 +22,8 @@ const signup = async (req, res) => {
       userId: userCreated._id.toString(),
     });
   } catch (error) {
-    res.status(500).json("Internal Server Error");
+    // res.status(500).json("Internal Server Error");
+    next(error)
   }
 };
 
