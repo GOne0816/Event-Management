@@ -106,7 +106,31 @@ const Welcome = () => {
       {/* Hero Section */}
       <Hero />
 
-      {/* What you love Section */}
+            {/* Upcoming Events Section */}
+            <section className="bg-zinc-100 w-full pt-16 transition-all duration-500 ease-in-out">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-center">
+          Upcoming Events
+        </h2>
+        <div className="grid gap-8 py-24 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-6 sm:px-8 lg:px-60">
+          {eventCards.map((event) => (
+            <div
+              key={event.id}
+              className="bg-white ring-1 ring-zinc-400 rounded-lg p-6 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+            >
+              <h3 className="text-xl font-bold mb-2">{event.title}</h3>
+              <p className="text-zinc-500 mb-1">{event.date}</p>
+              <p className="text-zinc-500">{event.location}</p>
+              <button className="btn-Blue my-2">Learn More</button>
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-center items-center mb-16">
+          <button className="btn-Blue"><Link to="/eventForYou">View all events</Link></button>
+          
+        </div>
+      </section>
+
+      {/* What you love Section
       <section className="w-full">
         <div className="bg-zinc-100 px-80 max-sm:px-8 py-16">
           <h1 className="sm:text-3xl md:text-4xl lg:text-5xl text-4xl font-bold tracking-tighter">
@@ -120,7 +144,7 @@ const Welcome = () => {
           </div>
           <button className="btn-Blue">Show More</button>
         </div>
-      </section>
+      </section> */}
 
       {/* Features Section */}
       <section className="w-full pt-16 bg-white transition-all duration-500 ease-in-out">
@@ -143,29 +167,7 @@ const Welcome = () => {
         </div>
       </section>
 
-      {/* Upcoming Events Section */}
-      <section className="bg-zinc-100 w-full pt-16 transition-all duration-500 ease-in-out">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-center">
-          Upcoming Events
-        </h2>
-        <div className="grid gap-8 py-24 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-6 sm:px-8 lg:px-60">
-          {eventCards.map((event) => (
-            <div
-              key={event.id}
-              className="bg-white ring-1 ring-zinc-400 rounded-lg p-6 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
-            >
-              <h3 className="text-xl font-bold mb-2">{event.title}</h3>
-              <p className="text-zinc-500 mb-1">{event.date}</p>
-              <p className="text-zinc-500">{event.location}</p>
-              <button className="btn-Blue my-2">Learn More</button>
-            </div>
-          ))}
-        </div>
-        <div className="flex justify-center items-center mb-16">
-          <button className="btn-Blue"><Link to="/eventForYou">View all events</Link></button>
-          
-        </div>
-      </section>
+
 
       {/* Testimonials Section */}
       <section>
