@@ -106,16 +106,16 @@ const Welcome = () => {
       {/* Hero Section */}
       <Hero />
 
-            {/* Upcoming Events Section */}
-            <section className="bg-zinc-100 w-full pt-16 transition-all duration-500 ease-in-out">
+      {/* Upcoming Events Section */}
+      <section className=" w-full pt-16 transition-all duration-500 ease-in-out">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-center">
           Upcoming Events
         </h2>
-        <div className="grid gap-8 py-24 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-6 sm:px-8 lg:px-60">
+        <div className="grid  gap-8 py-24 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-6 sm:px-8 lg:px-60">
           {eventCards.map((event) => (
             <div
               key={event.id}
-              className="bg-white ring-1 ring-zinc-400 rounded-lg p-6 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+              className="bg-zinc-100 ring-1 ring-zinc-400 rounded-lg p-6 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
             >
               <h3 className="text-xl font-bold mb-2">{event.title}</h3>
               <p className="text-zinc-500 mb-1">{event.date}</p>
@@ -125,8 +125,9 @@ const Welcome = () => {
           ))}
         </div>
         <div className="flex justify-center items-center mb-16">
-          <button className="btn-Blue"><Link to="/eventForYou">View all events</Link></button>
-          
+          <button className="btn-Blue">
+            <Link to="/eventForYou">View all events</Link>
+          </button>
         </div>
       </section>
 
@@ -147,7 +148,7 @@ const Welcome = () => {
       </section> */}
 
       {/* Features Section */}
-      <section className="w-full pt-16 bg-white transition-all duration-500 ease-in-out">
+      <section className="w-full pt-16 bg-zinc-100 transition-all duration-500 ease-in-out">
         <div className="px-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-center">
             Why Choose Us
@@ -157,7 +158,7 @@ const Welcome = () => {
           {featuresList.map((feature) => (
             <div
               key={feature.id}
-              className="bg-zinc-100 ring-1 ring-zinc-400 rounded-lg p-6 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+              className="ring-1 bg-white ring-zinc-400 rounded-lg p-6 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
             >
               <div className="flex justify-center mb-4">{feature.icon}</div>
               <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
@@ -166,8 +167,6 @@ const Welcome = () => {
           ))}
         </div>
       </section>
-
-
 
       {/* Testimonials Section */}
       <section>
