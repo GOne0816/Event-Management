@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Label } from "@/components/ui/label";
 import { Skeleton } from "@/components/ui/skeleton";
 import ReqInput from "../../components/ui/RequiredInput";
-import RadioB from "../../components/ui/Radio";
+import FileUpload from "../../components/ui/FileUpload";
 import Select from "../../components/ui/RequiredSelect";
 import DatePicker from "../../components/ui/DatePicker";
 import EventDescription from "../../components/ui/EventDesc";
@@ -41,19 +41,15 @@ const CreateEvent = () => {
         <div className="w-2/3 py-16 flex gap-4 max-sm:w-[90%]">
           <form className="bg-white w-4/6 max-sm:w-full rounded-xl p-8">
             <h1 className="font-bold text-xl mb-8">Publish Your Event</h1>
-            <h3 className="font-semibold text-lg mb-4">Step 1</h3>
 
             {/* Event Name Input Section */}
             <div className="flex flex-col my-4">
               <ReqInput />
             </div>
 
-            {/* Event Type Input Section */}
-            <div className="flex flex-col my-4 space-y-2">
-              <Label htmlFor="">
-                Event Type <span className="text-destructive">*</span>
-              </Label>
-              <RadioB />
+            {/* Event Name Input Section */}
+            <div className="flex flex-col my-4">
+              <FileUpload />
             </div>
 
             {/* Time & Date Section */}
@@ -71,34 +67,7 @@ const CreateEvent = () => {
               <EventDescription className="" />
             </div>
 
-            {/* Organizer Page */}
-            <div>
-              <label htmlFor="">
-                Organizer Page ({" "}
-                <a className="text-blue-500" href="http://">
-                  create new page
-                </a>{" "}
-                )
-              </label>
-              <div className="ring-1 ring-zinc-500 rounded-xl p-4 my-4">
-                <input type="text" name="" id="" />
-              </div>
-            </div>
-            <button className="btn-Blue">Continue</button>
-            <div className="mt-8">
-              <h3 className="font-semibold text-lg mb-4">Step 2</h3>
-              <ul>
-                <li>
-                  <span> &#8226; </span> Add Event Banner
-                </li>
-                <li>
-                  <span> &#8226; </span> Setup Ticketing & Payment Details
-                </li>
-                <li>
-                  <span> &#8226; </span> Publish Your Event Page
-                </li>
-              </ul>
-            </div>
+            <button className="btn-Blue">Publish Your Event</button>
           </form>
           <div className="bg-white w-2/6 rounded-xl p-8 max-sm:hidden">
             <div className="mb-4">
