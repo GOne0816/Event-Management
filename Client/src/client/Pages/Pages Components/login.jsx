@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState,useEffect} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {useAuth} from '../../../store/auth-context'
 
 const Login = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,7 +14,17 @@ const Login = () => {
     password: "",
   });
 
-  const navigate = useNavigate(); // Initialize navigate for redirection
+  const navigate = useNavigate();  // Initialize navigate for redirection
+  const {storeTokenInLS} = useAuth() 
+
+  //<-------------------------------------------------------------handle create event and login-------------------->
+
+  useEffect(() => {
+    const token = localStorage.getItem("Token"); // Check if token exists
+    if (token) {
+      navigate("/CreateEvent"); // Redirect to Create Event page if logged in
+    }
+  }, [navigate]);
 
   // Handle form submission
   const handleSubmit = async (e) => {
@@ -29,7 +40,9 @@ const Login = () => {
       });
 
       if (response.ok) {
-        const data = await response.json(); // Parse server response if needed
+        //<----------------------------------------store token using context API------------------------------------------>
+        const res_data = await response.json();
+        storeTokenInLS(res_data.token)
         toast.success("Login successful! Redirecting to home page...", {
           position: "top-right",
           autoClose: 2000,

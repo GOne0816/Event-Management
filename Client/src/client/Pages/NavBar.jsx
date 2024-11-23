@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { useAuth } from "../../store/auth-context"; // Importing useAuth
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { token, signoutUser } = useAuth(); // Access token and signoutUser from AuthContext
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
     <div>
-      <nav className="w-full p-4 bg-white  shadow-md flex justify-between items-center px-6 lg:px-16">
+      <nav className="w-full p-4 bg-white shadow-md flex justify-between items-center px-6 lg:px-16">
         {/* Logo */}
         <Link to="/" className="text-2xl lg:text-3xl font-extrabold">
           Festify
@@ -23,9 +25,20 @@ const NavBar = () => {
           <Link to="/eventForYou" className="btn-Text p-2 rounded-md text-base lg:text-lg">
             Events for You
           </Link>
-          <Link to="/signup" className="btn-Outlined ring-zinc-400 p-2 rounded-md text-base lg:text-lg">
-            Sign Up
-          </Link>
+          {token ? (
+            // Sign Out button if logged in
+            <button
+              onClick={signoutUser}
+              className="btn-Outlined text-slate-600 font-normal ring-zinc-400 p-2 rounded-md text-base lg:text-lg"
+            >
+              Sign Out
+            </button>
+          ) : (
+            // Sign Up button if not logged in
+            <Link to="/signup" className="btn-Outlined ring-zinc-400 p-2 rounded-md text-base lg:text-lg">
+              Sign Up
+            </Link>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -55,11 +68,25 @@ const NavBar = () => {
                 Events for You
               </button>
             </Link>
-            <Link to="/signup" onClick={toggleMenu}>
-              <button className="btn-Outlined w-full text-left ring-zinc-400 p-2 rounded-md">
-                Sign Up
+            {token ? (
+              // Sign Out button for mobile view
+              <button
+                onClick={() => {
+                  toggleMenu();
+                  signoutUser();
+                }}
+                className="btn-Outlined w-full text-left ring-zinc-400 p-2 rounded-md"
+              >
+                Sign Out
               </button>
-            </Link>
+            ) : (
+              // Sign Up button for mobile view
+              <Link to="/signup" onClick={toggleMenu}>
+                <button className="btn-Outlined w-full text-left ring-zinc-400 p-2 rounded-md">
+                  Sign Up
+                </button>
+              </Link>
+            )}
           </div>
         </div>
       )}

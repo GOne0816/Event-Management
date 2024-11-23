@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Label } from "@/components/ui/label";
-import { Skeleton } from "@/components/ui/skeleton"
+import { Skeleton } from "@/components/ui/skeleton";
 import ReqInput from "../../components/ui/RequiredInput";
 import RadioB from "../../components/ui/Radio";
 import Select from "../../components/ui/RequiredSelect";
@@ -8,6 +9,16 @@ import DatePicker from "../../components/ui/DatePicker";
 import EventDescription from "../../components/ui/EventDesc";
 
 const CreateEvent = () => {
+  const navigate = useNavigate();
+
+  // Check if the user is logged in by verifying the token in localStorage
+  useEffect(() => {
+    const token = localStorage.getItem("token"); // Assuming the token is stored in localStorage with the key "authToken"
+    if (!token) {
+      navigate("/login"); // Redirect to login page if the token is not found
+    }
+  }, [navigate]);
+
   return (
     <div className="bg-zinc-100 h-[100%] w-full">
       <section className=" flex justify-center items-center flex-col gap-8 py-8 max-sm:py-4">
@@ -20,7 +31,7 @@ const CreateEvent = () => {
             </h1>
             <p>
               Check out this product tour video and learn how you can make the
-              most out of Festify and it's features!
+              most out of Festify and its features!
             </p>
             <button className="btn-Blue">Watch Now</button>
           </div>
@@ -37,7 +48,7 @@ const CreateEvent = () => {
               <ReqInput />
             </div>
 
-            {/* Event Type Input Secton */}
+            {/* Event Type Input Section */}
             <div className="flex flex-col my-4 space-y-2">
               <Label htmlFor="">
                 Event Type <span className="text-destructive">*</span>
@@ -57,7 +68,7 @@ const CreateEvent = () => {
 
             {/* Event Description */}
             <div className="flex flex-col my-4">
-              <EventDescription className=""/>
+              <EventDescription className="" />
             </div>
 
             {/* Organizer Page */}
@@ -107,8 +118,8 @@ const CreateEvent = () => {
                 Or, import from other platforms
               </h1>
               <p className="py-4">
-                Have you already published your events on other platform like
-                Facebook, Eventbrite or your own website?
+                Have you already published your events on other platforms like
+                Facebook, Eventbrite, or your own website?
               </p>
               <button className="btn-Blue">IMPORT EVENTS</button>
             </div>
@@ -118,8 +129,8 @@ const CreateEvent = () => {
                 Improve your event's performance
               </h1>
               <p className="py-4">
-                Improve your event's performanceDon't forget to add Tickets on
-                AllEvents in your banners & designs.It helps event-goers know
+                Improve your event's performance. Don't forget to add Tickets on
+                AllEvents in your banners & designs. It helps event-goers know
                 where they can find an option to buy tickets.
               </p>
               <button className="btn-Blue">DOWNLOAD MEDIA KIT</button>

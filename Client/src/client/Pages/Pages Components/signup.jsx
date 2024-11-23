@@ -3,9 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useAuth } from "../../../store/auth-context";
 
 const Signup = () => {
-  const navigate = useNavigate(); // Initialize navigate for redirection
+  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => setIsVisible((prevState) => !prevState);
 
@@ -15,11 +16,12 @@ const Signup = () => {
     password: "",
   });
 
-  // Handling the form submission
+  const { storeTokenInLS } = useAuth();
+
+  // Handling form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(user);
-//<-----------------------------------------------connecting to backend server and store data in database-------------------------------------------
+
     try {
       const response = await fetch("http://localhost:8000/signup", {
         method: "POST",
@@ -30,37 +32,49 @@ const Signup = () => {
       });
 
       if (response.ok) {
-        toast.success("Account created successfully! Redirecting to login...", {
-          position: "top-right",
-          autoClose: 2000,
-        });
+        const res_data = await response.json();
+
+        // Store token and redirect to home
+        storeTokenInLS(res_data.token);
+        toast.success(
+          `🎉 Welcome, ${user.name}! Your account has been created successfully.`,
+          {
+            position: "top-right",
+            autoClose: 2500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          }
+        );
         setTimeout(() => {
           setUser({
             name: "",
             email: "",
             password: "",
           });
-          navigate("/login"); // Redirect to the login page
-        }, 1500); // Delay to let the toast display before redirecting
+          navigate("/"); // Redirect to home screen
+        }, 2000);
       } else {
         const errorData = await response.json();
         toast.error(errorData.message || "Signup failed. Please try again.", {
           position: "top-right",
-          autoClose: 1500,
+          autoClose: 2500,
         });
       }
     } catch (error) {
-      console.error("Registration error", error);
+      console.error("Registration error:", error);
       toast.error("Something went wrong. Please try again later.", {
         position: "top-right",
-        autoClose: 1500,
+        autoClose: 2500,
       });
     }
   };
 
   return (
     <div className="w-full h-screen flex justify-center items-center bg-gray-50">
-      <ToastContainer /> {/* Toast notifications container */}
+      <ToastContainer />
       <div className="max-w-md w-11/12 sm:w-9/12 md:w-8/12 lg:w-6/12 xl:w-4/12 bg-gray-100 rounded-xl p-8 shadow-lg">
         <form onSubmit={handleSubmit}>
           <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-center">
