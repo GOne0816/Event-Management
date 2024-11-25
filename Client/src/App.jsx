@@ -15,6 +15,8 @@ import Support from "./client/Pages/Pages Components/Support";
 import Privacy from "./client/Pages/Pages Components/Privacy";
 import ContactUs from "./client/Pages/Pages Components/Contact";
 import Error from "./client/Pages/Pages Components/Error";
+import ManagerDashboard from "./client/Pages/ManagerDashboard";
+import EditEvent from "./client/Pages/Pages Components/EditEvent";
 
 const App = () => {
   const [showNavAndFooter, setShowNavAndFooter] = useState(true);
@@ -29,12 +31,14 @@ const App = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Signout" element={<Signout />} />
+        <Route path="/managerDashboard" element={<ManagerDashboard />} />
         <Route path="/about" element={<About />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/support" element={<Support />} />
         <Route path="/terms+of+service" element={<TermsOfService />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/contact+us" element={<ContactUs />} />
+        <Route path="/edit-event/:eventId" element={<EditEvent />} />
         <Route path="/*" element={<Error setShowNavAndFooter={setShowNavAndFooter} />} />
       </Routes>
       {showNavAndFooter && <Footer />}

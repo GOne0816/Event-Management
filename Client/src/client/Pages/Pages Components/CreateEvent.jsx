@@ -24,6 +24,7 @@ const CreateEvent = () => {
     if (!token) {
       navigate("/login");
     }
+    console.log("Token:", token);
   }, [navigate]);
 
   // Handle input changes
@@ -104,6 +105,7 @@ const CreateEvent = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Bearer ${localStorage.getItem('token')}`,
         },
         body: JSON.stringify(formData),
       });

@@ -14,7 +14,11 @@ const userSchema = new Schema({
     password:{
         type:String,
         required:true
-    }
+    },
+    eventsCreated: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Event',
+    }]
 })
 
 userSchema.pre("save", async function (next) {

@@ -31,15 +31,22 @@ const NavBar = () => {
           <Link to="/eventForYou" className="btn-Text p-2 rounded-md text-base lg:text-lg">
             Events for You
           </Link>
-          {token ? (
-            // Sign Out button if logged in
-            <button
-              onClick={() => setShowLogoutConfirm(true)} // Show confirmation modal
-              className="btn-Outlined text-slate-600 font-normal ring-zinc-400 p-2 rounded-md text-base lg:text-lg"
-            >
-              Sign Out
-            </button>
-          ) : (
+          {token && (
+            <>
+              {/* Dashboard Button */}
+              <Link to="/managerDashboard" className="btn-Text p-2 rounded-md text-base lg:text-lg">
+                Dashboard
+              </Link>
+              {/* Sign Out button */}
+              <button
+                onClick={() => setShowLogoutConfirm(true)} // Show confirmation modal
+                className="btn-Outlined text-slate-600 font-normal ring-zinc-400 p-2 rounded-md text-base lg:text-lg"
+              >
+                Sign Out
+              </button>
+            </>
+          )}
+          {!token && (
             // Sign Up button if not logged in
             <Link to="/signup" className="btn-Outlined ring-zinc-400 p-2 rounded-md text-base lg:text-lg">
               Sign Up
@@ -74,16 +81,25 @@ const NavBar = () => {
                 Events for You
               </button>
             </Link>
-            {token ? (
-              // Sign Out button for mobile view
-              <button
-                onClick={() => setShowLogoutConfirm(true)} // Show confirmation modal
-                className="btn-Outlined w-full text-left ring-zinc-400 p-2 rounded-md"
-              >
-                Sign Out
-              </button>
-            ) : (
-              // Sign Up button for mobile view
+            {token && (
+              <>
+                {/* Dashboard Button for Mobile */}
+                <Link to="/dashboard" onClick={toggleMenu}>
+                  <button className="btn-Text w-full text-left p-2 rounded-md">
+                    Dashboard
+                  </button>
+                </Link>
+                {/* Sign Out button for Mobile */}
+                <button
+                  onClick={() => setShowLogoutConfirm(true)} // Show confirmation modal
+                  className="btn-Outlined w-full text-left ring-zinc-400 p-2 rounded-md"
+                >
+                  Sign Out
+                </button>
+              </>
+            )}
+            {!token && (
+              // Sign Up button for Mobile
               <Link to="/signup" onClick={toggleMenu}>
                 <button className="btn-Outlined w-full text-left ring-zinc-400 p-2 rounded-md">
                   Sign Up

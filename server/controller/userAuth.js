@@ -61,16 +61,15 @@ const login = async (req, res) => {
 
   //Get user Data
 
-  // const user = async (req, res) => {
-  //   try {
-  //     // const userData = await User.find({});
-  //     const userData = req.user;
-  //     console.log(userData);
-  //     return res.status(200).json({ msg: userData });
-  //   } catch (error) {
-  //     console.log(`error in trying to get user data ${error}`);
-  //   }
-  // };
+  const user = async (req, res) => {
+    try {
+      const userData = await User.findById(req.userId).populate('eventsCreated');
+      console.log(userData);
+      return res.status(200).json({ msg: userData });
+    } catch (error) {
+      console.log(`error in trying to get user data ${error}`);
+    }
+  };
   
 
-module.exports = { signup , login};
+module.exports = { signup , login, user};
