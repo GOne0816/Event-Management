@@ -8,8 +8,9 @@ const createEvent = async (req, res) => {
       eventName, 
       eventDate, 
       eventPlace, 
-      eventLocation, 
-      eventDescription 
+      eventLocation,
+      eventDescription,
+      
     } = req.body;
 
     // Validate required fields
@@ -28,6 +29,8 @@ const createEvent = async (req, res) => {
       eventPlace,
       eventLocation,
       eventDescription,
+
+
     });
 
     // Save the event to the database

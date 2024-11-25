@@ -107,66 +107,66 @@ const Welcome = () => {
     <div className="w-full flex flex-col items-center">
       <Hero />
 
-      {/* Events Section */}
-      <section className="w-full pt-16 transition-all duration-500 ease-in-out">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-center">
-          Events
-        </h2>
-        {loading ? (
-          <p className="text-center text-gray-500 text-lg">Loading events...</p>
-        ) : events && events.length === 0 ? (
-          <div className="text-center text-gray-500 text-xl font-medium mt-10">
-            No events found.
+     {/* Events Section */}
+<section className="w-full pt-16 transition-all duration-500 ease-in-out">
+  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-center">
+    Events
+  </h2>
+  {loading ? (
+    <p className="text-center text-gray-500 text-lg">Loading events...</p>
+  ) : events && events.length === 0 ? (
+    <div className="text-center text-gray-500 text-xl font-medium mt-10">
+      No events found.
+    </div>
+  ) : (
+    <div className="grid gap-8 py-24 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-6 sm:px-8 lg:px-60">
+      {eventData.slice(0, 8).map((event) => (
+        <div
+          key={event.id}
+          className="border border-gray-200 shadow-lg rounded-xl overflow-hidden bg-white hover:shadow-2xl transition-shadow duration-300"
+        >
+          <div className="relative w-full h-48">
+            <img
+              src={event.image}
+              alt={event.eventName}
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                e.target.src = DEFAULT_EVENT_IMAGE;
+              }}
+            />
           </div>
-        ) : (
-          <div className="grid gap-8 py-24 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-6 sm:px-8 lg:px-60">
-            {eventData.map((event) => (
-              <div
-                key={event.id}
-                className="border border-gray-200 shadow-lg rounded-xl overflow-hidden bg-white hover:shadow-2xl transition-shadow duration-300"
-              >
-                <div className="relative w-full h-48">
-                  <img
-                    src={event.image}
-                    alt={event.eventName}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.target.src = DEFAULT_EVENT_IMAGE;
-                    }}
-                  />
-                </div>
-                <div className="p-6">
-                  <h2 className="text-xl font-semibold text-gray-800 truncate mb-2">
-                    {event.eventName}
-                  </h2>
-                  <p className="text-sm text-gray-600 mb-1">
-                    <FaMapMarkerAlt className="inline-block text-red-500 mr-2" />
-                    {event.eventLocation}
-                    <br />
-                    <FaPlaceOfWorship className="inline-block text-green-500 mr-2" />
-                    {event.eventPlace}
-                  </p>
-                  <p className="text-sm text-gray-600 mb-3">
-                    <FaRegCalendar className="inline-block text-blue-500 mr-2" />
-                    {new Date(event.eventDate).toLocaleDateString()}
-                  </p>
-                  <button
-                    className="btn-Blue w-full py-2 text-base font-medium mt-4"
-                    onClick={() => setSelectedEvent(event)}
-                  >
-                    View More
-                  </button>
-                </div>
-              </div>
-            ))}
+          <div className="p-6">
+            <h2 className="text-xl font-semibold text-gray-800 truncate mb-2">
+              {event.eventName}
+            </h2>
+            <p className="text-sm text-gray-600 mb-1">
+              <FaMapMarkerAlt className="inline-block text-red-500 mr-2" />
+              {event.eventLocation}
+              <br />
+              <FaPlaceOfWorship className="inline-block text-green-500 mr-2" />
+              {event.eventPlace}
+            </p>
+            <p className="text-sm text-gray-600 mb-3">
+              <FaRegCalendar className="inline-block text-blue-500 mr-2" />
+              {new Date(event.eventDate).toLocaleDateString()}
+            </p>
+            <button
+              className="btn-Blue w-full py-2 text-base font-medium mt-4"
+              onClick={() => setSelectedEvent(event)}
+            >
+              View More
+            </button>
           </div>
-        )}
-        <div className="flex justify-center items-center mb-16">
-          <button className="btn-Blue">
-            <Link to="/eventForYou">View all events</Link>
-          </button>
         </div>
-      </section>
+      ))}
+    </div>
+  )}
+  <div className="flex justify-center items-center mb-16">
+    <button className="btn-Blue">
+      <Link to="/eventForYou">View all events</Link>
+    </button>
+  </div>
+</section>
 
       {/* Event Detail Modal */}
       {selectedEvent && (

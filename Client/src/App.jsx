@@ -15,6 +15,7 @@ import Support from "./client/Pages/Pages Components/Support";
 import Privacy from "./client/Pages/Pages Components/Privacy";
 import ContactUs from "./client/Pages/Pages Components/Contact";
 import Error from "./client/Pages/Pages Components/Error";
+import managerDashboard from "./client/Pages/managerDashboard";
 
 const App = () => {
   const [showNavAndFooter, setShowNavAndFooter] = useState(true);
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Signout" element={<Signout />} />
+        <Route path="/managerDashboard" element={<managerDashboard />} />
         <Route path="/about" element={<About />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/support" element={<Support />} />
