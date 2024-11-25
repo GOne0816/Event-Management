@@ -21,12 +21,7 @@ export default function BackgroundBeamsDemo() {
           className="text-neutral-500 max-w-lg mx-auto my-2 text-sm text-center relative z-10">
           Discover the most happening events around you
         </p>
-        <input
-          type="text"
-          placeholder="Search Events, Categories, Location..."
-          className="px-4 py-2 outline-none rounded-lg border text-white border-neutral-800 focus:ring-2 focus:ring-teal-500  w-full relative z-10 mt-4  bg-neutral-950 placeholder:text-neutral-700" />
       </div>
-      <BackgroundBeams />
     </div>)
   );
 }

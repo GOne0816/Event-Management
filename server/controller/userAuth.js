@@ -57,6 +57,20 @@ const login = async (req, res) => {
       res.status(500).json({ message: "Internal Server Error", error: error.message });
     }
   };
+
+
+  //Get user Data
+
+  // const user = async (req, res) => {
+  //   try {
+  //     // const userData = await User.find({});
+  //     const userData = req.user;
+  //     console.log(userData);
+  //     return res.status(200).json({ msg: userData });
+  //   } catch (error) {
+  //     console.log(`error in trying to get user data ${error}`);
+  //   }
+  // };
   
 
 module.exports = { signup , login};

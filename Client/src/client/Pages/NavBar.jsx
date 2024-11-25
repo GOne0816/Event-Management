@@ -5,9 +5,15 @@ import { useAuth } from "../../store/auth-context"; // Importing useAuth
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showLogoutConfirm, setShowLogoutConfirm] = useState(false); // State for logout confirmation modal
   const { token, signoutUser } = useAuth(); // Access token and signoutUser from AuthContext
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const handleSignOut = () => {
+    signoutUser(); // Perform logout
+    setShowLogoutConfirm(false); // Close modal
+  };
 
   return (
     <div>
@@ -28,7 +34,7 @@ const NavBar = () => {
           {token ? (
             // Sign Out button if logged in
             <button
-              onClick={signoutUser}
+              onClick={() => setShowLogoutConfirm(true)} // Show confirmation modal
               className="btn-Outlined text-slate-600 font-normal ring-zinc-400 p-2 rounded-md text-base lg:text-lg"
             >
               Sign Out
@@ -71,10 +77,7 @@ const NavBar = () => {
             {token ? (
               // Sign Out button for mobile view
               <button
-                onClick={() => {
-                  toggleMenu();
-                  signoutUser();
-                }}
+                onClick={() => setShowLogoutConfirm(true)} // Show confirmation modal
                 className="btn-Outlined w-full text-left ring-zinc-400 p-2 rounded-md"
               >
                 Sign Out
@@ -87,6 +90,29 @@ const NavBar = () => {
                 </button>
               </Link>
             )}
+          </div>
+        </div>
+      )}
+
+      {/* Logout Confirmation Modal */}
+      {showLogoutConfirm && (
+        <div className="fixed top-2 right-4 z-50 bg-white shadow-lg rounded-lg p-4 ring-1 ring-gray-300">
+          <h3 className="text-lg font-semibold text-gray-800 mb-4">
+            Are you sure you want to logout?
+          </h3>
+          <div className="flex justify-end gap-4">
+            <button
+              onClick={() => setShowLogoutConfirm(false)} // Close modal
+              className="btn-Outlined ring-zinc-400 p-2 rounded-md"
+            >
+              Cancel
+            </button>
+            <button
+              onClick={handleSignOut} // Confirm logout
+              className="btn-Blue p-2 rounded-md"
+            >
+              Sign out
+            </button>
           </div>
         </div>
       )}
