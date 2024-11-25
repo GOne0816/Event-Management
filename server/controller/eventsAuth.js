@@ -11,6 +11,10 @@ const createEvent = async (req, res) => {
       eventPlace, 
       eventLocation,
       eventDescription,
+<<<<<<< HEAD
+=======
+      
+>>>>>>> 816c068f68700f65949b6e8b55a96b45def94d50
     } = req.body;
 
 
@@ -30,7 +34,11 @@ const createEvent = async (req, res) => {
       eventPlace,
       eventLocation,
       eventDescription,
+<<<<<<< HEAD
       creator: req.userId,
+=======
+
+>>>>>>> 816c068f68700f65949b6e8b55a96b45def94d50
 
     });
 

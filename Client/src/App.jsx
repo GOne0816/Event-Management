@@ -15,8 +15,12 @@ import Support from "./client/Pages/Pages Components/Support";
 import Privacy from "./client/Pages/Pages Components/Privacy";
 import ContactUs from "./client/Pages/Pages Components/Contact";
 import Error from "./client/Pages/Pages Components/Error";
+<<<<<<< HEAD
 import ManagerDashboard from "./client/Pages/ManagerDashboard";
 import EditEvent from "./client/Pages/Pages Components/EditEvent";
+=======
+import managerDashboard from "./client/Pages/managerDashboard";
+>>>>>>> 816c068f68700f65949b6e8b55a96b45def94d50
 
 const App = () => {
   const [showNavAndFooter, setShowNavAndFooter] = useState(true);
@@ -31,7 +35,11 @@ const App = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Signout" element={<Signout />} />
+<<<<<<< HEAD
         <Route path="/managerDashboard" element={<ManagerDashboard />} />
+=======
+        <Route path="/managerDashboard" element={<managerDashboard />} />
+>>>>>>> 816c068f68700f65949b6e8b55a96b45def94d50
         <Route path="/about" element={<About />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/support" element={<Support />} />
